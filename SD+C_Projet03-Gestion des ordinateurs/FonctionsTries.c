@@ -9,7 +9,6 @@
 
 
 // Fonction 5 de répartition par spécialité
-
 void repartitonSpecialite (Tordinateur **listeOrdinateur, int nbreOrdi)
 {
     Tordinateur **tmpPtr;
@@ -81,7 +80,6 @@ void repartitonSpecialite (Tordinateur **listeOrdinateur, int nbreOrdi)
 }
 
 // Fonction 6 de répartition par Marque
-
 void repartitionMarque (Tordinateur **listeOrdinateur, int nbreOrdi)
 {
     Tordinateur **tmpPtr;
@@ -129,7 +127,6 @@ void repartitionMarque (Tordinateur **listeOrdinateur, int nbreOrdi)
 }
 
 // Fonction 7 de tri par vitesse de processeurs
-
 void trier_parVitesse(Tordinateur **listeOrdinateur, int nbreOrdi)
 {
     Tordinateur **tmpPtr;
@@ -143,9 +140,9 @@ void trier_parVitesse(Tordinateur **listeOrdinateur, int nbreOrdi)
         {
             if ((*tmpPtr2)->vitesseCPU < (*tmpPtr1)->vitesseCPU)
             {
-                relai = *tmpPtr1;
-                *tmpPtr1 = *tmpPtr;
-                *tmpPtr2 = relai;
+                relai = tmpPtr1;
+                tmpPtr1 = tmpPtr2;
+                tmpPtr2 = relai;
             }
         }
         (*(listeOrdinateur + i)) = (*tmpPtr1);
@@ -158,7 +155,3 @@ void trier_parVitesse(Tordinateur **listeOrdinateur, int nbreOrdi)
         printf("\n  L'ordinateur de vitesse CPU =  %f", (*tmpPtr)->vitesseCPU);
     }
 }
-
-
-
-

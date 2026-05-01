@@ -8,18 +8,17 @@
 #define TAB_MAX 300
 
 // Fonction 1 de saisie des informations de tous les ordinateurs
-
-Tordinateur **saisir_listeOrdinateur(int nbreOrdi)
+Tordinateur *saisir_listeOrdinateur(int nbreOrdi)
 {
     Tordinateur **listeOrdinateur;
     Tordinateur **tmpPtr;
     int cpt = 0;
-    printf("\n Entrer le nombre d'ordinateur: ");
+    printf("\n Entrer le nombre d'ordinateurs : ");
     scanf("%d", &nbreOrdi);
     while (nbreOrdi > TAB_MAX || nbreOrdi <= 0)
     {
-        printf("\n Le nombre d'ordinateur est supérieur au nombre maximal requis, réessayez!");
-        scanf("%d", nbreOrdi);
+        printf("\n Le nombre d'ordinateur est supérieur au nombre maximal permis, réessayez!");
+        scanf("%d", &nbreOrdi);
     }
     listeOrdinateur = (Tordinateur**)malloc(nbreOrdi*sizeof (Tordinateur*));
     if (listeOrdinateur == NULL)
@@ -34,12 +33,10 @@ Tordinateur **saisir_listeOrdinateur(int nbreOrdi)
     }
 
     return listeOrdinateur;
-
 }
 
 
  // Création de la fonction de saisie des informations
-
 Tordinateur *ajouter_ordinateur(int cpt)
 {
     Tordinateur *nouvelOrdinateur;
@@ -72,8 +69,8 @@ Tordinateur *ajouter_ordinateur(int cpt)
 
 }
 
-// Fonction 2 de suppression d'un ordinateur
 
+// Fonction 2 de suppression d'un ordinateur
 void supprimer_Ordinateur(Tordinateur **listeOrdinateur, int nbreOrdi)
 {
         int indice;
@@ -85,21 +82,19 @@ void supprimer_Ordinateur(Tordinateur **listeOrdinateur, int nbreOrdi)
             scanf("%d", &indice);
         }
 
-        free(*listeOrdinateur + (indice -1));
+        free(listeOrdinateur + (indice -1));
         *(listeOrdinateur + (indice -1)) = NULL;
         printf("\n Votre ordinateur a bien été supprimé de la liste de vos ordinateurs. Merci! \n");
-
-
 }
 
-// Fonction 3 pour lister l'ensemble des informations
 
+// Fonction 3 pour lister l'ensemble des informations
 void informations_desOrdinateurs( Tordinateur **listeOrdinateur, int nbreOrdi)
 {
     Tordinateur **tmpPtr;
     for (tmpPtr = listeOrdinateur; tmpPtr < listeOrdinateur + (nbreOrdi); tmpPtr ++)
     {
-        while(*tmpPtr ==  NULL)
+        while((*tmpPtr) ==  NULL)
         {
             tmpPtr = tmpPtr + 1;
         }
@@ -109,11 +104,9 @@ void informations_desOrdinateurs( Tordinateur **listeOrdinateur, int nbreOrdi)
 
 
 // Fonction 4 d'affichage des informations d'un ordinateur
-
 void afficher_details_d_un_ordinateur (Tordinateur ** listeOrdinateur, int nbreOrdi)
 
 // indice c'est l'indice du pc dont l'utilisateur veut lire les informations
-
 {
         int indice;
         Tordinateur **tmpPtr;
@@ -134,14 +127,10 @@ void afficher_details_d_un_ordinateur (Tordinateur ** listeOrdinateur, int nbreO
         printf("\n Ram: %d", (*tmpPtr)->ram);
         printf("\n Taille du disque dur: %d", (*tmpPtr)->tailleDisque);
         printf("\n Prix estimé de l'ordinteur: %d \n", (*tmpPtr)->prixEstime);
-
-
 }
 
 
-
 // Fonction 8 pour la somme du prix des ordinateurs
-
 void calculer_sommePrix(Tordinateur **listeOrdinateur , int nbreOrdi)
 {
 
@@ -154,9 +143,3 @@ void calculer_sommePrix(Tordinateur **listeOrdinateur , int nbreOrdi)
     printf("\n La somme totale du prix des ordinateurs s'élève à %d FCFA", sommep);
 
 }
-
-
-
-
-
-

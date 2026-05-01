@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1777645676 source:c:\users\dell\documents\codeblocks\sd+c_2026_groupe_1\sd+c_projet03-gestion des ordinateurs\fonctionstries.c
+	<stdio.h>
+	<stdlib.h>
+	"Ordinateur.h"
+	"FonctionsTries.h"
+	"Mesfonctions.h"
+	<locale.h>
+
+1777645715 c:\users\dell\documents\codeblocks\sd+c_2026_groupe_1\sd+c_projet03-gestion des ordinateurs\ordinateur.h
+
+1777645674 c:\users\dell\documents\codeblocks\sd+c_2026_groupe_1\sd+c_projet03-gestion des ordinateurs\fonctionstries.h
+	"Ordinateur.h"
+
+1777645676 c:\users\dell\documents\codeblocks\sd+c_2026_groupe_1\sd+c_projet03-gestion des ordinateurs\mesfonctions.h
+	"Ordinateur.h"
+
+1777645763 source:c:\users\dell\documents\codeblocks\sd+c_2026_groupe_1\sd+c_projet03-gestion des ordinateurs\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Mesfonctions.h"
+	"Ordinateur.h"
+	"FonctionsTries.h"
+	<locale.h>
+
+1777645773 source:c:\users\dell\documents\codeblocks\sd+c_2026_groupe_1\sd+c_projet03-gestion des ordinateurs\mesfonctions.c
+	<stdio.h>
+	<stdlib.h>
+	"Ordinateur.h"
+	"Mesfonctions.h"
+	"FonctionsTries.h"
+	<locale.h>
+
