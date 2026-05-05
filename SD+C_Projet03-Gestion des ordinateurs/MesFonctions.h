@@ -12,9 +12,9 @@ typedef struct Tordinateur Tordinateur;
 struct Tordinateur {
 
    int numCarte;
-   char specialite[30];
-   char numSerie[30];
-   char marque [30];
+   char specialite[31];
+   char numSerie[31];
+   char marque [31];
    float vitesseCPU;
    int ram;
    int tailleDisque;
