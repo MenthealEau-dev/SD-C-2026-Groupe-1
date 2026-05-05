@@ -43,7 +43,7 @@ int main(void)
     Tordinateur ** pointeur_tab = NULL;
     int menu;
     int nbreOrdi;
-    int sortiezzzzzzzzz = 0;
+    int sortie = 0;
     int i = 0;
 
     printf("\n=== MENU PRINCIPAL ===\n");
