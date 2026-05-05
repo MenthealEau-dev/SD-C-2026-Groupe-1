@@ -15,7 +15,7 @@
 1777645676 c:\users\dell\documents\codeblocks\sd+c_2026_groupe_1\sd+c_projet03-gestion des ordinateurs\mesfonctions.h
 	"Ordinateur.h"
 
-1777645763 source:c:\users\dell\documents\codeblocks\sd+c_2026_groupe_1\sd+c_projet03-gestion des ordinateurs\main.c
+1777665869 source:c:\users\dell\documents\codeblocks\sd+c_2026_groupe_1\sd+c_projet03-gestion des ordinateurs\main.c
 	<stdio.h>
 	<stdlib.h>
 	"Mesfonctions.h"
@@ -23,7 +23,7 @@
 	"FonctionsTries.h"
 	<locale.h>
 
-1777645773 source:c:\users\dell\documents\codeblocks\sd+c_2026_groupe_1\sd+c_projet03-gestion des ordinateurs\mesfonctions.c
+1777662195 source:c:\users\dell\documents\codeblocks\sd+c_2026_groupe_1\sd+c_projet03-gestion des ordinateurs\mesfonctions.c
 	<stdio.h>
 	<stdlib.h>
 	"Ordinateur.h"

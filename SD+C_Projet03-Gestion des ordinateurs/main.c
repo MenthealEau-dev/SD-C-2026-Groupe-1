@@ -44,6 +44,7 @@ int main(void)
     int menu;
     int nbreOrdi;
     int sortie = 0;
+    int sortie = 0;
     int i = 0;
 
     printf("\n=== MENU PRINCIPAL ===\n");
@@ -68,7 +69,7 @@ int main(void)
                 break;
             case 2:
                 printf("MENU SUPPRESSION D'ORDINATEUR \n");
-                supprimer_Ordinateur(park, nbreOrdi);
+                supprimer_Ordinateur(&(**park), nbreOrdi);
                 break;
             case 3:
                 printf("MENU LISTE DES ORDINATEURS \n");
