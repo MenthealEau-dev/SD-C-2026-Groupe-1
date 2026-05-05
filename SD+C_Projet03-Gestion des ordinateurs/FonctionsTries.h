@@ -1,4 +1,4 @@
-#include "Ordinateur.h"
+#include "MesFonctions.h"
 #define TAB_MAX 300
 
 // prototype 5 de la fonction de repartition par spécialité

@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "Ordinateur.h"
 #include "FonctionsTries.h"
 #include "Mesfonctions.h"
 #include <locale.h>

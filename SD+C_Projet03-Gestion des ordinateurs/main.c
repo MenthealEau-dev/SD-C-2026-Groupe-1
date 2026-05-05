@@ -30,7 +30,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Mesfonctions.h"
-#include "Ordinateur.h"
 #include "FonctionsTries.h"
 #include <locale.h>
 

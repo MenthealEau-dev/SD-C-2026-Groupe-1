@@ -1,7 +1,25 @@
 
-#include "Ordinateur.h"
+
 #define TAB_MAX 300
 
+#ifndef MES_FONCTIONS_H
+#define MES_FONCTIONS_H
+
+
+// Déclaration de la structure
+
+typedef struct Tordinateur Tordinateur;
+struct Tordinateur {
+
+   int numCarte;
+   char specialite[30];
+   char numSerie[30];
+   char marque [30];
+   float vitesseCPU;
+   int ram;
+   int tailleDisque;
+   int prixEstime;
+};
 
 // Prototype pour l'allocation mémoire
 
@@ -29,4 +47,6 @@ void afficher_details_d_un_ordinateur (Tordinateur ** listeOrdinateur, int nbreO
 
 // prototype 8 de la fonction de calcul du prix total des ordinateurs
 
-void calculer_sommePrix(Tordinateur **listeOrdinateur, int nbreOrdi);
+void calculer_sommePrix(Tordinateur **listeOrdinateur, int nbre);
+
+#endif // MES_FONCTIONS_H
