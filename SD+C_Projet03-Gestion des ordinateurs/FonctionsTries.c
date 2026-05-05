@@ -12,22 +12,67 @@
 void repartitonSpecialite (Tordinateur **listeOrdinateur, int nbreOrdi)
 {
     Tordinateur **tmpPtr;
-    Tordinateur **tmpPtr2;
-    int i;
     int deja [6] = {0, 0, 0, 0, 0, 0, 0};
     for (tmpPtr = listeOrdinateur; tmpPtr < listeOrdinateur + nbreOrdi; tmpPtr ++)
     {
-        for (tmpPtr2 = listeOrdinateur; tmpPtr2 < listeOrdinateur + nbreOrdi; tmpPtr2 ++)
+        if(strcmp((*tmpPtr)->specialite, "GM") == 0)
         {
-             if(strcmp((*tmpPtr)->specialite, (*tmpPtr2)->specialite) == 0)
+           if(!deja[0])
             {
-                if(!deja[0])
-                    {
-                        printf("\n Voici les ordinateur de spécialité %s ", (*tmpPtr2)->specialite);
-                        deja[0] = 1;
-                    }
-                printf("\n L'ordinateur %s de numéro de série %s ", (*tmpPtr)->marque,(*tmpPtr)->numSerie, (*tmpPtr)->ram, (*tmpPtr)->prixEstime);
+                printf("\n Voici les ordinateur de spécialité GM: ");
+                deja[0] = 1;
             }
+            printf("\n L'ordinateur %s de numéro de série %s ", (*tmpPtr)->marque,(*tmpPtr)->numSerie, (*tmpPtr)->ram, (*tmpPtr)->prixEstime);
+        }
+
+        if(strcmp((*tmpPtr)->specialite, "IS") == 0)
+        {
+           if(!deja[1])
+            {
+                printf("\n\n Voici les ordinateur de spécialité IS: ");
+                deja[1] = 1;
+            }
+            printf("\n L'ordinateur %s de numéro de série %s ", (*tmpPtr)->marque,(*tmpPtr)->numSerie);
+        }
+
+        if(strcmp((*tmpPtr)->specialite, "GC") == 0)
+        {
+           if(!deja[2])
+            {
+                printf("\n Voici les ordinateur de spécialité GC: ");
+                deja[2] = 1;
+            }
+            printf("\n L'ordinateur %s de numéro de série %s ", (*tmpPtr)->marque,(*tmpPtr)->numSerie);
+        }
+
+        if(strcmp((*tmpPtr)->specialite, "LT") == 0)
+        {
+           if(!deja[3])
+            {
+                printf("\n Voici les ordinateur de spécialité LT: ");
+                deja[3] = 1;
+            }
+            printf("\n L'ordinateur %s de numéro de série %s ", (*tmpPtr)->marque,(*tmpPtr)->numSerie);
+        }
+
+        if(strcmp((*tmpPtr)->specialite, "IABD") == 0)
+        {
+           if(!deja[4])
+            {
+                printf("\n Voici les ordinateur de spécialité IABD: ");
+                deja[4] = 1;
+            }
+            printf("\n L'ordinateur %s de numéro de série %s ", (*tmpPtr)->marque,(*tmpPtr)->numSerie);
+        }
+
+        if(strcmp((*tmpPtr)->specialite, "GE") == 0)
+        {
+           if(!deja[5])
+            {
+                printf("\n Voici les ordinateur de spécialité GE: ");
+                deja[5] = 1;
+            }
+            printf("\n L'ordinateur %s de numéro de série %s ", (*tmpPtr)->marque,(*tmpPtr)->numSerie);
         }
 
     }
