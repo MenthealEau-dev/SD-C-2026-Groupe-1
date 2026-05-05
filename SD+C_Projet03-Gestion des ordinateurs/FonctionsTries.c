@@ -12,17 +12,18 @@
 void repartitonSpecialite (Tordinateur **listeOrdinateur, int nbreOrdi)
 {
     Tordinateur **tmpPtr;
+    Tordinateur **tmpPtr2;
     int i;
     int deja [6] = {0, 0, 0, 0, 0, 0, 0};
     for (tmpPtr = listeOrdinateur; tmpPtr < listeOrdinateur + nbreOrdi; tmpPtr ++)
     {
-        for (i = 0; i < nbreOrdi; i ++)
+        for (tmpPtr2 = listeOrdinateur; tmpPtr2 < listeOrdinateur + nbreOrdi; tmpPtr2 ++)
         {
-             if(strcmp((*tmpPtr)->specialite, (*listeOrdinateur + i)->specialite) == 0)
+             if(strcmp((*tmpPtr)->specialite, (*tmpPtr2)->specialite) == 0)
             {
                 if(!deja[0])
                     {
-                        printf("\n Voici les ordinateur de spécialité %s ", (*listeOrdinateur + i)->specialite);
+                        printf("\n Voici les ordinateur de spécialité %s ", (*tmpPtr2)->specialite);
                         deja[0] = 1;
                     }
                 printf("\n L'ordinateur %s de numéro de série %s ", (*tmpPtr)->marque,(*tmpPtr)->numSerie, (*tmpPtr)->ram, (*tmpPtr)->prixEstime);

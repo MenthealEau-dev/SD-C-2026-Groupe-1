@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1778010427 source:c:\users\dell\documents\codeblocks\sd+c_2026_groupe_1\sd+c_projet03-gestion des ordinateurs\fonctionstries.c
+1778014694 source:c:\users\dell\documents\codeblocks\sd+c_2026_groupe_1\sd+c_projet03-gestion des ordinateurs\fonctionstries.c
 	<stdio.h>
 	<stdlib.h>
 	"Ordinateur.h"
