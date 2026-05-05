@@ -2,6 +2,11 @@
 #include "Ordinateur.h"
 #define TAB_MAX 300
 
+
+// Prototype pour l'allocation mémoire
+
+Tordinateur ** mallocation( int nbreOrdi);
+
 // prototype 1 de la fonction de saisie des informations de tous les oridinatateurs
 
 Tordinateur *saisir_listeOrdinateur(int nbreOrdi);

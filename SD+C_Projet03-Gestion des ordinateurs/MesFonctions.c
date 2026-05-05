@@ -7,7 +7,23 @@
 
 #define TAB_MAX 300
 
+// Fonction d'allocation de mémoire
+
+Tordinateur **mallocation( int nbreOrdi)
+{
+    Tordinateur ***park;
+    (park) = (Tordinateur**)malloc(nbreOrdi*sizeof(Tordinateur));
+    if ((*park) == NULL)
+    {
+        printf("\n Allocation échoué!");
+        exit(1);
+    }
+    return park;
+
+
+}
 // Fonction 1 de saisie des informations de tous les ordinateurs
+
 Tordinateur *saisir_listeOrdinateur(int nbreOrdi)
 {
     Tordinateur **listeOrdinateur;
