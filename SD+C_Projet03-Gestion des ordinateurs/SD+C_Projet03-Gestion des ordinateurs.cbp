@@ -39,7 +39,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="MesFonctions.h" />
-		<Unit filename="Ordinateur.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

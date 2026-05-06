@@ -27,7 +27,7 @@ Tordinateur ** mallocation( int nbreOrdi);
 
 // prototype 1 de la fonction de saisie des informations de tous les oridinatateurs
 
-Tordinateur *saisir_listeOrdinateur(int nbreOrdi);
+Tordinateur *saisir_listeOrdinateur(Tordinateur**park, int nbreOrdi);
 
 // prototype  de la fonction de saisie des informations d'un oridinataur
 

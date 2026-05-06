@@ -8,39 +8,35 @@
 
 // Fonction d'allocation de mémoire
 
-Tordinateur **mallocation( int nbreOrdi)
+Tordinateur **mallocation(int nbreOrdi)
 {
-    Tordinateur ***park;
-    (park) = (Tordinateur**)malloc(nbreOrdi*sizeof(Tordinateur));
-    if ((*park) == NULL)
-    {
-        printf("\n Allocation échoué!");
-        exit(1);
-    }
-    return park;
+    Tordinateur **listeOrdinateur ;
 
-
-}
-// Fonction 1 de saisie des informations de tous les ordinateurs
-
-Tordinateur *saisir_listeOrdinateur(int nbreOrdi)
-{
-    Tordinateur **listeOrdinateur;
-    Tordinateur **tmpPtr;
-    int cpt = 0;
     printf("\n Entrer le nombre d'ordinateurs : ");
     scanf("%d", &nbreOrdi);
     while (nbreOrdi > TAB_MAX || nbreOrdi <= 0)
     {
         printf("\n Le nombre d'ordinateur est supérieur au nombre maximal permis, réessayez!");
         scanf("%d", &nbreOrdi);
+    };
+    if ((listeOrdinateur) == NULL)
+    {
+        printf("\n Allocation échoué!");
+        exit(1);
     }
     listeOrdinateur = (Tordinateur**)malloc(nbreOrdi*sizeof (Tordinateur*));
-    if (listeOrdinateur == NULL)
-    {
-        printf("Allocation échoué");
-        exit (1);
-    }
+    return listeOrdinateur;
+
+
+}
+// Fonction 1 de saisie des informations de tous les ordinateurs
+
+Tordinateur *saisir_listeOrdinateur(Tordinateur **park, int nbreOrdi)
+{
+    Tordinateur **listeOrdinateur;
+    Tordinateur **tmpPtr;
+    int cpt = 0;
+    listeOrdinateur = park;
     for (tmpPtr = listeOrdinateur; tmpPtr < listeOrdinateur + nbreOrdi; tmpPtr ++)
     {
         (*tmpPtr) = ajouter_ordinateur(cpt);
