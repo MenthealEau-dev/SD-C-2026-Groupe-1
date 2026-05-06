@@ -16,7 +16,7 @@ Tordinateur **mallocation(int nbreOrdi)
     scanf("%d", &nbreOrdi);
     while (nbreOrdi > TAB_MAX || nbreOrdi <= 0)
     {
-        printf("\n Le nombre d'ordinateur est supérieur au nombre maximal permis, réessayez!");
+        printf("\n Le nombre d'ordinateur est supérieur au nombre maximal permis, réessayez! ");
         scanf("%d", &nbreOrdi);
     };
     if ((listeOrdinateur) == NULL)
