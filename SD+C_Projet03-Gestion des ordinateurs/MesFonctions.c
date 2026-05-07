@@ -8,35 +8,32 @@
 
 // Fonction d'allocation de mémoire
 
-Tordinateur **mallocation(int nbreOrdi)
+Tordinateur **mallocation(int *nbreOrdi)
 {
-    Tordinateur **listeOrdinateur ;
-
+    Tordinateur **listeOrdinateur = 0;
     printf("\n Entrer le nombre d'ordinateurs : ");
-    scanf("%d", &nbreOrdi);
-    while (nbreOrdi > TAB_MAX || nbreOrdi <= 0)
+    scanf("%d", nbreOrdi);
+    while ((*nbreOrdi) > TAB_MAX || (*nbreOrdi) <= 0)
     {
         printf("\n Le nombre d'ordinateur est supérieur au nombre maximal permis, réessayez! ");
-        scanf("%d", &nbreOrdi);
-    };
+        scanf("%d", nbreOrdi);
+    }
+    listeOrdinateur = (Tordinateur**)malloc((*nbreOrdi)*sizeof (Tordinateur*));
     if ((listeOrdinateur) == NULL)
     {
         printf("\n Allocation échoué!");
         exit(1);
     }
-    listeOrdinateur = (Tordinateur**)malloc(nbreOrdi*sizeof (Tordinateur*));
     return listeOrdinateur;
 
 
 }
 // Fonction 1 de saisie des informations de tous les ordinateurs
 
-Tordinateur *saisir_listeOrdinateur(Tordinateur **park, int nbreOrdi)
+Tordinateur *saisir_listeOrdinateur(Tordinateur **listeOrdinateur, int nbreOrdi)
 {
-    Tordinateur **listeOrdinateur;
     Tordinateur **tmpPtr;
     int cpt = 0;
-    listeOrdinateur = park;
     for (tmpPtr = listeOrdinateur; tmpPtr < listeOrdinateur + nbreOrdi; tmpPtr ++)
     {
         (*tmpPtr) = ajouter_ordinateur(cpt);
@@ -103,7 +100,7 @@ void supprimer_Ordinateur(Tordinateur **listeOrdinateur, int nbreOrdi)
 void informations_desOrdinateurs( Tordinateur **listeOrdinateur, int nbreOrdi)
 {
     Tordinateur **tmpPtr;
-    for (tmpPtr = listeOrdinateur; tmpPtr < listeOrdinateur + (nbreOrdi); tmpPtr ++)
+    for (tmpPtr = listeOrdinateur; tmpPtr < listeOrdinateur + nbreOrdi; tmpPtr ++)
     {
         while((*tmpPtr) ==  NULL)
         {
@@ -134,7 +131,7 @@ void afficher_details_d_un_ordinateur (Tordinateur ** listeOrdinateur, int nbreO
         printf("\n Spécialié: %s", (*tmpPtr)->specialite);
         printf("\n Numéro de série: %s", (*tmpPtr)->numSerie);
         printf("\n Marque: %s", (*tmpPtr)->marque);
-        printf("\n Vitesse du CPU: %f", (*tmpPtr)->vitesseCPU);
+        printf("\n Vitesse du CPU: %.2f", (*tmpPtr)->vitesseCPU);
         printf("\n Ram: %d", (*tmpPtr)->ram);
         printf("\n Taille du disque dur: %d", (*tmpPtr)->tailleDisque);
         printf("\n Prix estimé de l'ordinteur: %d \n", (*tmpPtr)->prixEstime);
@@ -149,8 +146,12 @@ void calculer_sommePrix(Tordinateur **listeOrdinateur , int nbreOrdi)
     Tordinateur **tmpPtr;
     for (tmpPtr = listeOrdinateur; tmpPtr < listeOrdinateur + nbreOrdi; tmpPtr ++)
     {
+        while((*tmpPtr) ==  NULL)
+        {
+            tmpPtr = tmpPtr + 1;
+        }
         sommep = sommep + ((*tmpPtr)->prixEstime);
     }
-    printf("\n La somme totale du prix des ordinateurs s'élève à %d FCFA", sommep);
+    printf("\n La somme totale du prix des ordinateurs s'élève à %d FCFA \n", sommep);
 
 }

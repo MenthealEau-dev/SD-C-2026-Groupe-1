@@ -38,10 +38,10 @@
 int main(void)
 {
     setlocale(LC_ALL, "");
-    Tordinateur **park;
+    Tordinateur **park = NULL;
     Tordinateur ** pointeur_tab = NULL;
     int menu;
-    int nbreOrdi;
+    int *nbreOrdi;
     int sortie = 0;
     int i = 0;
 
@@ -64,7 +64,7 @@ int main(void)
         {
             case 1:
                 printf("MENU AJOUT D'ORDINATEUR \n");
-                park = mallocation(nbreOrdi);
+                park = mallocation(&nbreOrdi);
                 park = saisir_listeOrdinateur(park,nbreOrdi);
                 break;
             case 2:

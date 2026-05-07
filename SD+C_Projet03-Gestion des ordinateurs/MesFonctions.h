@@ -1,10 +1,12 @@
 
-
-#define TAB_MAX 300
-
 #ifndef MES_FONCTIONS_H
 #define MES_FONCTIONS_H
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define TAB_MAX 300
 
 // Déclaration de la structure
 
@@ -23,7 +25,7 @@ struct Tordinateur {
 
 // Prototype pour l'allocation mémoire
 
-Tordinateur ** mallocation( int nbreOrdi);
+Tordinateur ** mallocation( int *nbreOrdi);
 
 // prototype 1 de la fonction de saisie des informations de tous les oridinatateurs
 

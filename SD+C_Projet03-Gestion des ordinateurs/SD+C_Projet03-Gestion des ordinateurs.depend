@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1778023200 source:c:\users\dell\documents\codeblocks\sd+c_2026_groupe_1\sd+c_projet03-gestion des ordinateurs\fonctionstries.c
+1778123969 source:c:\users\dell\documents\codeblocks\sd+c_2026_groupe_1\sd+c_projet03-gestion des ordinateurs\fonctionstries.c
 	<stdio.h>
 	<stdlib.h>
 	"FonctionsTries.h"
@@ -11,16 +11,19 @@
 1778023233 c:\users\dell\documents\codeblocks\sd+c_2026_groupe_1\sd+c_projet03-gestion des ordinateurs\fonctionstries.h
 	"MesFonctions.h"
 
-1778050437 c:\users\dell\documents\codeblocks\sd+c_2026_groupe_1\sd+c_projet03-gestion des ordinateurs\mesfonctions.h
+1778119442 c:\users\dell\documents\codeblocks\sd+c_2026_groupe_1\sd+c_projet03-gestion des ordinateurs\mesfonctions.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
 
-1778051419 source:c:\users\dell\documents\codeblocks\sd+c_2026_groupe_1\sd+c_projet03-gestion des ordinateurs\main.c
+1778119342 source:c:\users\dell\documents\codeblocks\sd+c_2026_groupe_1\sd+c_projet03-gestion des ordinateurs\main.c
 	<stdio.h>
 	<stdlib.h>
 	"Mesfonctions.h"
 	"FonctionsTries.h"
 	<locale.h>
 
-1778051226 source:c:\users\dell\documents\codeblocks\sd+c_2026_groupe_1\sd+c_projet03-gestion des ordinateurs\mesfonctions.c
+1778121454 source:c:\users\dell\documents\codeblocks\sd+c_2026_groupe_1\sd+c_projet03-gestion des ordinateurs\mesfonctions.c
 	<stdio.h>
 	<stdlib.h>
 	"Mesfonctions.h"
