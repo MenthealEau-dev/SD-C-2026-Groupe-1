@@ -10,31 +10,38 @@
 
 void repartitonSpecialite(Tordinateur **listeOrdinateur, int nbreOrdi)
 {
-    Tordinateur **tmpPtr1;
-    Tordinateur **tmpPtr2;
-    Tordinateur **tmpPtr3;
-    int deja;
-
-    for (tmpPtr1 = listeOrdinateur; tmpPtr1 < listeOrdinateur + nbreOrdi; tmpPtr1++)
+     if (nbreOrdi == 0 )
     {
-        if (*tmpPtr1 != NULL)
+        printf("\n Votre park est vide pour le moment! Veuillez saisir les informations d'au moins un ordinateur! Merci\n ");
+    }
+    else
+    {
+        Tordinateur **tmpPtr1;
+        Tordinateur **tmpPtr2;
+        Tordinateur **tmpPtr3;
+        int deja;
+
+        for (tmpPtr1 = listeOrdinateur; tmpPtr1 < listeOrdinateur + nbreOrdi; tmpPtr1++)
         {
-            deja = 0;
-            for (tmpPtr2 = listeOrdinateur; tmpPtr2 < tmpPtr1; tmpPtr2++)
+            if (*tmpPtr1 != NULL)
             {
-                if (*tmpPtr2 != NULL && strcmp((*tmpPtr1)->specialite, (*tmpPtr2)->specialite) == 0)
+                deja = 0;
+                for (tmpPtr2 = listeOrdinateur; tmpPtr2 < tmpPtr1; tmpPtr2++)
                 {
-                    deja = 1;
-                }
-            }
-            if (deja == 0)
-            {
-                printf("\n Voici les ordinateur de spécialité %s: \n", (*tmpPtr1)->specialite);
-                for (tmpPtr3 = listeOrdinateur; tmpPtr3 < listeOrdinateur + nbreOrdi; tmpPtr3++)
-                {
-                    if (*tmpPtr3 != NULL && strcmp((*tmpPtr3)->specialite, (*tmpPtr1)->specialite) == 0)
+                    if (*tmpPtr2 != NULL && strcmp((*tmpPtr1)->specialite, (*tmpPtr2)->specialite) == 0)
                     {
-                        printf("\n L'ordinateur %s de numéro de série %s \n", (*tmpPtr3)->marque, (*tmpPtr3)->numSerie);
+                        deja = 1;
+                    }
+                }
+                if (deja == 0)
+                {
+                    printf("\n --------Voici les ordinateur de spécialité %s: -------\n", (*tmpPtr1)->specialite);
+                    for (tmpPtr3 = listeOrdinateur; tmpPtr3 < listeOrdinateur + nbreOrdi; tmpPtr3++)
+                    {
+                        if (*tmpPtr3 != NULL && strcmp((*tmpPtr3)->specialite, (*tmpPtr1)->specialite) == 0)
+                        {
+                            printf("\n L'ordinateur %s de numéro de série %s \n", (*tmpPtr3)->marque, (*tmpPtr3)->numSerie);
+                        }
                     }
                 }
             }
@@ -42,37 +49,44 @@ void repartitonSpecialite(Tordinateur **listeOrdinateur, int nbreOrdi)
     }
 }
 
-// Fonction 6 de répartition par Marque
+// Fonction 6 de répartition par Marque WILFRIED
 
 void repartitionMarque(Tordinateur **listeOrdinateur, int nbreOrdi)
 {
-    Tordinateur **tmpPtr1;
-    Tordinateur **tmpPtr2;
-    Tordinateur **tmpPtr3;
-    int deja;
-
-    for (tmpPtr1 = listeOrdinateur; tmpPtr1 < listeOrdinateur + nbreOrdi; tmpPtr1++)
+     if (nbreOrdi == 0 )
     {
-        if (*tmpPtr1 != NULL)
+        printf("\n Votre park est vide pour le moment! Veuillez saisir les informations d'au moins un ordinateur! Merci\n ");
+    }
+    else
+    {
+        Tordinateur **tmpPtr1;
+        Tordinateur **tmpPtr2;
+        Tordinateur **tmpPtr3;
+        int deja;
+
+        for (tmpPtr1 = listeOrdinateur; tmpPtr1 < listeOrdinateur + nbreOrdi; tmpPtr1++)
         {
-            deja = 0;
-            for (tmpPtr2 = listeOrdinateur; tmpPtr2 < tmpPtr1; tmpPtr2++)
+            if (*tmpPtr1 != NULL)
             {
-                if (*tmpPtr2 != NULL && strcmp((*tmpPtr1)->marque, (*tmpPtr2)->marque) == 0)
+                deja = 0;
+                for (tmpPtr2 = listeOrdinateur; tmpPtr2 < tmpPtr1; tmpPtr2++)
                 {
-                    deja = 1;
-                }
-            }
-
-            if (deja == 0)
-            {
-                printf("\n Voici les ordinateur de Marque %s: \n", (*tmpPtr1)->marque);
-
-                for (tmpPtr3 = listeOrdinateur; tmpPtr3 < listeOrdinateur + nbreOrdi; tmpPtr3++)
-                {
-                    if (*tmpPtr3 != NULL && strcmp((*tmpPtr3)->marque, (*tmpPtr1)->marque) == 0)
+                    if (*tmpPtr2 != NULL && strcmp((*tmpPtr1)->marque, (*tmpPtr2)->marque) == 0)
                     {
-                        printf("\n L'ordinateur %s de numéro de série %s \n", (*tmpPtr3)->marque, (*tmpPtr3)->numSerie);
+                        deja = 1;
+                    }
+                }
+
+                if (deja == 0)
+                {
+                    printf("\n --------Voici les ordinateur de Marque %s: --------\n", (*tmpPtr1)->marque);
+
+                    for (tmpPtr3 = listeOrdinateur; tmpPtr3 < listeOrdinateur + nbreOrdi; tmpPtr3++)
+                    {
+                        if (*tmpPtr3 != NULL && strcmp((*tmpPtr3)->marque, (*tmpPtr1)->marque) == 0)
+                        {
+                            printf("\n L'ordinateur %s de numéro de série %s \n", (*tmpPtr3)->marque, (*tmpPtr3)->numSerie);
+                        }
                     }
                 }
             }
@@ -84,35 +98,42 @@ void repartitionMarque(Tordinateur **listeOrdinateur, int nbreOrdi)
 
 void trier_parVitesse(Tordinateur **listeOrdinateur, int nbreOrdi)
 {
-    Tordinateur **tmpPtr1;
-    Tordinateur **tmpPtr2;
-    Tordinateur **tmpPtr3;
-    int deja = 0;
-
-    for (tmpPtr1 = listeOrdinateur; tmpPtr1 < listeOrdinateur + nbreOrdi; tmpPtr1++)
+     if (nbreOrdi == 0 )
     {
-        if (*tmpPtr1 != NULL)
+        printf("\n Votre park est vide pour le moment! Veuillez saisir les informations d'au moins un ordinateur! Merci\n ");
+    }
+    else
+    {
+        Tordinateur **tmpPtr1;
+        Tordinateur **tmpPtr2;
+        Tordinateur **tmpPtr3;
+        int deja = 0;
+
+        for (tmpPtr1 = listeOrdinateur; tmpPtr1 < listeOrdinateur + nbreOrdi; tmpPtr1++)
         {
-            deja = 0;
-        }
-        for (tmpPtr2 = listeOrdinateur; tmpPtr2 < tmpPtr1; tmpPtr2++)
-        {
-            if(*tmpPtr2 != NULL && (*tmpPtr1)->vitesseCPU ==(*tmpPtr2)->vitesseCPU)
+            if (*tmpPtr1 != NULL)
             {
-                deja = 1;
+                deja = 0;
             }
-        }
-        if (deja == 0)
-        {
-            printf("\n Voici les ordinateur de Vitesse de Processeur %f: \n", (*tmpPtr1)->vitesseCPU);
-
-            for (tmpPtr3 = listeOrdinateur; tmpPtr3 < listeOrdinateur + nbreOrdi; tmpPtr3++)
+            for (tmpPtr2 = listeOrdinateur; tmpPtr2 < tmpPtr1; tmpPtr2++)
             {
-                if (*tmpPtr3 != NULL &&(*tmpPtr3)->vitesseCPU ==(*tmpPtr1)->vitesseCPU)
+                if(*tmpPtr2 != NULL && (*tmpPtr1)->vitesseCPU ==(*tmpPtr2)->vitesseCPU)
                 {
-                    printf("\n L'ordinateur %s de numéro de série %s \n", (*tmpPtr3)->marque, (*tmpPtr3)->numSerie);
+                    deja = 1;
                 }
+            }
+            if (deja == 0)
+            {
+                printf("\n --------Voici les ordinateur de Vitesse de Processeur %.2f--------\n", (*tmpPtr1)->vitesseCPU);
 
+                for (tmpPtr3 = listeOrdinateur; tmpPtr3 < listeOrdinateur + nbreOrdi; tmpPtr3++)
+                {
+                    if (*tmpPtr3 != NULL &&(*tmpPtr3)->vitesseCPU ==(*tmpPtr1)->vitesseCPU)
+                    {
+                        printf("\n L'ordinateur %s de numéro de série %s \n", (*tmpPtr3)->marque, (*tmpPtr3)->numSerie);
+                    }
+
+                }
             }
         }
     }

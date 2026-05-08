@@ -25,11 +25,11 @@ struct Tordinateur {
 
 // Prototype pour l'allocation mémoire
 
-Tordinateur ** mallocation( int *nbreOrdi);
+Tordinateur ** mallocation();
 
 // prototype 1 de la fonction de saisie des informations de tous les oridinatateurs
 
-Tordinateur *saisir_listeOrdinateur(Tordinateur**park, int nbreOrdi);
+Tordinateur **saisir_listeOrdinateur(Tordinateur**park, int nbreOrdi, int cpt);
 
 // prototype  de la fonction de saisie des informations d'un oridinataur
 

@@ -37,16 +37,21 @@
 
 int main(void)
 {
+    // Déclaration des variables
     setlocale(LC_ALL, "");
-    Tordinateur **park = NULL;
-    Tordinateur ** pointeur_tab = NULL;
+    Tordinateur **park = NULL; // Liste de tous les ordinateurs initialisé à zéro
+    /*Tordinateur ** pointeur_tab = NULL;*/
     int menu;
-    int *nbreOrdi;
+    int nbreOrdi = 0;
     int sortie = 0;
-    int i = 0;
+    int cpt = 0;
 
 
-    printf("\n=== MENU PRINCIPAL ===\n");
+    park = mallocation();
+
+    while (sortie != 1)
+    {
+        printf("\n=== MENU PRINCIPAL ===\n");
         printf("1: AJOUTER UN ORDINATEUR\n");
         printf("2: SUPPRIMER UN ORDINATEUR\n");
         printf("3: LISTE DES ORDINATEURS\n");
@@ -56,44 +61,44 @@ int main(void)
         printf("7: TRI PAR VITESSE DU CPU\n");
         printf("8: VALEUR TOTALE DU PARK\n");
         printf("0: EXIT\n");
-    while (sortie != 1)
-    {
-        printf("\n VEUILLEZ CHOISIR UN MENU\n");
+        printf("\n VEUILLEZ CHOISIR UN MENU: ");
         scanf("%d",&menu);
+
         switch(menu)
         {
             case 1:
-                printf("MENU AJOUT D'ORDINATEUR \n");
-                park = mallocation(&nbreOrdi);
-                park = saisir_listeOrdinateur(park,nbreOrdi);
+                printf("\n MENU AJOUT D'ORDINATEUR \n");
+                nbreOrdi ++;
+                park = saisir_listeOrdinateur(park,nbreOrdi,cpt);
+                cpt++;
                 break;
             case 2:
-                printf("MENU SUPPRESSION D'ORDINATEUR \n");
+                printf("\n MENU SUPPRESSION D'ORDINATEUR \n");
                 supprimer_Ordinateur(park, nbreOrdi);
                 break;
             case 3:
-                printf("MENU LISTE DES ORDINATEURS \n");
+                printf("\n MENU LISTE DES ORDINATEURS \n");
                 informations_desOrdinateurs(park, nbreOrdi);
                 break;
             case 4:
-                printf("MENU DETAIL D'UN ORDINATEUR \n");
+                printf("\n MENU DETAIL D'UN ORDINATEUR \n");
                 afficher_details_d_un_ordinateur (park, nbreOrdi);
                 break;
             case 5:
-                printf("MENU DE REPARTITION PAR SPECIALITE \n");
+                printf("\n MENU DE REPARTITION PAR SPECIALITE \n");
                 repartitonSpecialite(park, nbreOrdi);
                 break;
             case 6:
-                printf("MENU DE REPARTITION PAR MARQUE \n");
+                printf("\n MENU DE REPARTITION PAR MARQUE \n");
                 repartitionMarque (park, nbreOrdi);
 
                 break;
             case 7:
-                printf("MENU DE REPATITION PAR VITESSE DU CPU \n");
+                printf("\n MENU DE REPATITION PAR VITESSE DU CPU \n");
                 trier_parVitesse(park, nbreOrdi);
                 break;
             case 8:
-                printf("MENU VALEUR TOTALE DU PARK \n ");
+                printf("\n MENU VALEUR TOTALE DU PARK \n ");
                 calculer_sommePrix(park, nbreOrdi);
                 break;
             case 0:
@@ -101,12 +106,15 @@ int main(void)
                 sortie = 1;
                 break;
             default:
-                printf("VEUILLEZ CHOISIR UN MENU COMPRIS ENTRE 0 ET 8 \n");
+                printf("LE MENU CHOISI DOIT ÊTRE COMPRIS ENTRE 0 ET 8 \n");
                 break;
 
         }
     }
+    printf("\n Le nombre d'ordi est %d", nbreOrdi);
 
+
+// libération de la mémoire
 
 free(park);
 park=NULL;
