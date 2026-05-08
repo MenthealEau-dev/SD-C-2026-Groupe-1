@@ -3,24 +3,24 @@
 ********************************************************
 
   Programme :  Gestion des ordinateurs
-              par des étudiants en SD+C .
-  Nom : SD+C - Les fondamentaux – Exercice 3
+              par des Ã©tudiants en SD+C .
+  Nom : SD+C - Les fondamentaux â€“ Exercice 3
   Ecrit en formalisme pointeur
   Auteurs :
-            1. ABIDI Mawusé Jean-Marie Gédéon (GM)
+            1. ABIDI MawusÃ© Jean-Marie GÃ©dÃ©on (GM)
             2. AKONDO Samihatou (GC)
             3. AKOTSU Yao Aurelien Placide (GM)
             4. AGBOGAN Komlan Marcel (GC)
-            5. BARA Oussonè Bryann (IA&BD)
+            5. BARA OussonÃ¨ Bryann (IA&BD)
             6. ETOH Fortunatus (GM)
             7. TCHA-ZAWA Abdou Moudjib (IA&BD)
             8. TINANKPA Wilfried kodjo (IA&BD)
             9. ZAMNA Mahamat Salim (GM)
 
   IDE : Code::Blocks
-  Chargé de l'UE : Monsieur AKAKPO
+  ChargÃ© de l'UE : Monsieur AKAKPO
   Niveau : L1 Semestre 2
-  Date de création : 27/04/2026
+  Date de crÃ©ation : 27/04/2026
   Date de rendu : 29/04/2026
 
 ********************************************************
@@ -47,11 +47,15 @@ int main(void)
     int cpt = 0;
 
 
+<<<<<<< HEAD
     park = mallocation();
 
     while (sortie != 1)
     {
         printf("\n=== MENU PRINCIPAL ===\n");
+=======
+    printf("\n===== MENU PRINCIPAL =====\n");
+>>>>>>> fb1ec6ef7cba0056e65778113f096115a10fccef
         printf("1: AJOUTER UN ORDINATEUR\n");
         printf("2: SUPPRIMER UN ORDINATEUR\n");
         printf("3: LISTE DES ORDINATEURS\n");
@@ -60,13 +64,21 @@ int main(void)
         printf("6: REPARTITION PAR MARQUE\n");
         printf("7: TRI PAR VITESSE DU CPU\n");
         printf("8: VALEUR TOTALE DU PARK\n");
+<<<<<<< HEAD
         printf("0: EXIT\n");
         printf("\n VEUILLEZ CHOISIR UN MENU: ");
+=======
+        printf("0: EXIT\n -----------------------------");
+    while (sortie != 1)
+    {
+        printf("\n VEUILLEZ CHOISIR UN MENU\n");
+>>>>>>> fb1ec6ef7cba0056e65778113f096115a10fccef
         scanf("%d",&menu);
 
         switch(menu)
         {
             case 1:
+<<<<<<< HEAD
                 printf("\n MENU AJOUT D'ORDINATEUR \n");
                 nbreOrdi ++;
                 park = saisir_listeOrdinateur(park,nbreOrdi,cpt);
@@ -90,19 +102,51 @@ int main(void)
                 break;
             case 6:
                 printf("\n MENU DE REPARTITION PAR MARQUE \n");
+=======
+                printf("===MENU AJOUT D'ORDINATEUR=== \n");
+                park = mallocation(&nbreOrdi);
+                park = saisir_listeOrdinateur(park,nbreOrdi);
+                break;
+            case 2:
+                printf("===MENU SUPPRESSION D'ORDINATEUR=== \n");
+                supprimer_Ordinateur(park, nbreOrdi);
+                break;
+            case 3:
+                printf("===MENU LISTE DES ORDINATEURS=== \n");
+                informations_desOrdinateurs(park, nbreOrdi);
+                break;
+            case 4:
+                printf("===MENU DETAIL D'UN ORDINATEUR=== \n");
+                afficher_details_d_un_ordinateur (park, nbreOrdi);
+                break;
+            case 5:
+                printf("===MENU DE REPARTITION PAR SPECIALITE=== \n");
+                repartitonSpecialite(park, nbreOrdi);
+                break;
+            case 6:
+                printf("===MENU DE REPARTITION PAR MARQUE=== \n");
+>>>>>>> fb1ec6ef7cba0056e65778113f096115a10fccef
                 repartitionMarque (park, nbreOrdi);
 
                 break;
             case 7:
+<<<<<<< HEAD
                 printf("\n MENU DE REPATITION PAR VITESSE DU CPU \n");
                 trier_parVitesse(park, nbreOrdi);
                 break;
             case 8:
                 printf("\n MENU VALEUR TOTALE DU PARK \n ");
+=======
+                printf("===MENU DE REPATITION PAR VITESSE DU CPU=== \n");
+                trier_parVitesse(park, nbreOrdi);
+                break;
+            case 8:
+                printf("===MENU VALEUR TOTALE DU PARK=== \n ");
+>>>>>>> fb1ec6ef7cba0056e65778113f096115a10fccef
                 calculer_sommePrix(park, nbreOrdi);
                 break;
             case 0:
-                printf("\n MERCI D'AVOIR VISITE LE MENU \n");
+                printf("\n MERCI D'AVOIR VISITE LE MENU \n ------------------------------------------");
                 sortie = 1;
                 break;
             default:
