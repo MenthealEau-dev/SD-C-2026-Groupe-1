@@ -47,110 +47,68 @@ int main(void)
     int cpt = 0;
 
 
-<<<<<<< HEAD
     park = mallocation();
 
     while (sortie != 1)
     {
-        printf("\n=== MENU PRINCIPAL ===\n");
-=======
-    printf("\n===== MENU PRINCIPAL =====\n");
->>>>>>> fb1ec6ef7cba0056e65778113f096115a10fccef
-        printf("1: AJOUTER UN ORDINATEUR\n");
-        printf("2: SUPPRIMER UN ORDINATEUR\n");
-        printf("3: LISTE DES ORDINATEURS\n");
-        printf("4: DETAIL D'UN ORDINATEUR\n");
-        printf("5: REPARTITION PAR SPECIALITE\n");
-        printf("6: REPARTITION PAR MARQUE\n");
-        printf("7: TRI PAR VITESSE DU CPU\n");
-        printf("8: VALEUR TOTALE DU PARK\n");
-<<<<<<< HEAD
-        printf("0: EXIT\n");
+        printf("\n============= MENU PRINCIPAL ================\n");
+        printf("*                                           *\n");
+        printf("*       1: AJOUTER UN ORDINATEUR            *\n");
+        printf("*       2: SUPPRIMER UN ORDINATEUR          *\n");
+        printf("*       3: LISTE DES ORDINATEURS            *\n");
+        printf("*       4: DETAIL D'UN ORDINATEUR           *\n");
+        printf("*       5: REPARTITION PAR SPECIALITE       *\n");
+        printf("*       6: REPARTITION PAR MARQUE           *\n");
+        printf("*       7: TRI PAR VITESSE DU CPU           *\n");
+        printf("*       0: EXIT                             *\n");
+         printf("*                                           *\n");
+        printf("=============================================\n");
         printf("\n VEUILLEZ CHOISIR UN MENU: ");
-=======
-        printf("0: EXIT\n -----------------------------");
-    while (sortie != 1)
-    {
-        printf("\n VEUILLEZ CHOISIR UN MENU\n");
->>>>>>> fb1ec6ef7cba0056e65778113f096115a10fccef
         scanf("%d",&menu);
 
         switch(menu)
         {
             case 1:
-<<<<<<< HEAD
-                printf("\n MENU AJOUT D'ORDINATEUR \n");
+                printf("\n======MENU AJOUT D'ORDINATEUR ======\n");
                 nbreOrdi ++;
                 park = saisir_listeOrdinateur(park,nbreOrdi,cpt);
                 cpt++;
                 break;
             case 2:
-                printf("\n MENU SUPPRESSION D'ORDINATEUR \n");
+                printf("\n======MENU SUPPRESSION D'ORDINATEUR======\n");
                 supprimer_Ordinateur(park, nbreOrdi);
                 break;
             case 3:
-                printf("\n MENU LISTE DES ORDINATEURS \n");
+                printf("\n======MENU LISTE DES ORDINATEURS======\n");
                 informations_desOrdinateurs(park, nbreOrdi);
                 break;
             case 4:
-                printf("\n MENU DETAIL D'UN ORDINATEUR \n");
+                printf("\n======MENU DETAIL D'UN ORDINATEUR======\n");
                 afficher_details_d_un_ordinateur (park, nbreOrdi);
                 break;
             case 5:
-                printf("\n MENU DE REPARTITION PAR SPECIALITE \n");
+                printf("\n======MENU DE REPARTITION PAR SPECIALITE======\n");
                 repartitonSpecialite(park, nbreOrdi);
                 break;
             case 6:
-                printf("\n MENU DE REPARTITION PAR MARQUE \n");
-=======
-                printf("===MENU AJOUT D'ORDINATEUR=== \n");
-                park = mallocation(&nbreOrdi);
-                park = saisir_listeOrdinateur(park,nbreOrdi);
-                break;
-            case 2:
-                printf("===MENU SUPPRESSION D'ORDINATEUR=== \n");
-                supprimer_Ordinateur(park, nbreOrdi);
-                break;
-            case 3:
-                printf("===MENU LISTE DES ORDINATEURS=== \n");
-                informations_desOrdinateurs(park, nbreOrdi);
-                break;
-            case 4:
-                printf("===MENU DETAIL D'UN ORDINATEUR=== \n");
-                afficher_details_d_un_ordinateur (park, nbreOrdi);
-                break;
-            case 5:
-                printf("===MENU DE REPARTITION PAR SPECIALITE=== \n");
-                repartitonSpecialite(park, nbreOrdi);
-                break;
-            case 6:
-                printf("===MENU DE REPARTITION PAR MARQUE=== \n");
->>>>>>> fb1ec6ef7cba0056e65778113f096115a10fccef
+                printf("\n======MENU DE REPARTITION PAR MARQUE======\n");
                 repartitionMarque (park, nbreOrdi);
 
                 break;
             case 7:
-<<<<<<< HEAD
-                printf("\n MENU DE REPATITION PAR VITESSE DU CPU \n");
+                printf("\n======MENU DE REPATITION PAR VITESSE DU CPU======\n");
                 trier_parVitesse(park, nbreOrdi);
                 break;
             case 8:
-                printf("\n MENU VALEUR TOTALE DU PARK \n ");
-=======
-                printf("===MENU DE REPATITION PAR VITESSE DU CPU=== \n");
-                trier_parVitesse(park, nbreOrdi);
-                break;
-            case 8:
-                printf("===MENU VALEUR TOTALE DU PARK=== \n ");
->>>>>>> fb1ec6ef7cba0056e65778113f096115a10fccef
+                printf("\n======MENU VALEUR TOTALE DU PARK======\n");
                 calculer_sommePrix(park, nbreOrdi);
                 break;
             case 0:
-                printf("\n MERCI D'AVOIR VISITE LE MENU \n ------------------------------------------");
+                printf("\n======MERCI D'AVOIR VISITE LE MENU======\n");
                 sortie = 1;
                 break;
             default:
-                printf("LE MENU CHOISI DOIT ÊTRE COMPRIS ENTRE 0 ET 8 \n");
+                printf("*****LE MENU CHOISI DOIT ÊTRE COMPRIS ENTRE 0 ET 8*****\n");
                 break;
 
         }
