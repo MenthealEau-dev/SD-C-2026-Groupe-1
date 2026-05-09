@@ -3,24 +3,25 @@
 ********************************************************
 
   Programme :  Gestion des ordinateurs
-              par des Ã©tudiants en SD+C .
-  Nom : SD+C - Les fondamentaux â€“ Exercice 3
+              par des étudiants en SD+C .
+  Nom : SD+C - Les fondamentaux  Exercice 3
   Ecrit en formalisme pointeur
-  Auteurs :
-            1. ABIDI MawusÃ© Jean-Marie GÃ©dÃ©on (GM)
-            2. AKONDO Samihatou (GC)
-            3. AKOTSU Yao Aurelien Placide (GM)
-            4. AGBOGAN Komlan Marcel (GC)
-            5. BARA OussonÃ¨ Bryann (IA&BD)
-            6. ETOH Fortunatus (GM)
-            7. TCHA-ZAWA Abdou Moudjib (IA&BD)
-            8. TINANKPA Wilfried kodjo (IA&BD)
-            9. ZAMNA Mahamat Salim (GM)
+   Auteurs :
+            1. ABIDI Mawusé Jean-Marie Gédéon (GM)
+            2. AKONDO Samihatou               (GC)
+            3. AKOTSU Yao Aurelien Placide    (GM)
+            4. AGBOGAN Komlan Marcel          (GC)
+            5. BARA Oussonè Bryann           (IA&BD)
+            6. ETOH Fortunatus                (GM)
+            7. TCHA-ZAWA Abdou Moudjib       (IA&BD)
+            8. TINANKPA Wilfried kodjo       (IA&BD)
+            9. ZAMNA Mahamat Salim            (GM)
+
 
   IDE : Code::Blocks
-  ChargÃ© de l'UE : Monsieur AKAKPO
+  Chargé de l'UE : Monsieur AKAKPO
   Niveau : L1 Semestre 2
-  Date de crÃ©ation : 27/04/2026
+  Date de création : 27/04/2026
   Date de rendu : 29/04/2026
 
 ********************************************************
