@@ -77,32 +77,38 @@ Tordinateur *ajouter_ordinateur(int cpt)
 // Fonction 2 de suppression d'un ordinateur
 void supprimer_Ordinateur(Tordinateur **listeOrdinateur, int *nbreOrdi)
 {
+    int deja = 0;
     Tordinateur** tmpPtr;
     if (*nbreOrdi == 0 )
     {
-        printf("\n Votre park est vide pour le moment! Veuillez saisir les informations d'au moins un ordinateur! Merci\n ");
+        printf("\n Votre park est vide pour le moment!\n");
+        printf("\n Veuillez saisir les informations d'au moins un ordinateur! Merci\n ");
     }
     else
     {
-
         int indice;
-        printf("\n Veuillez entrer l'indice de l'ordinateur que vous voulez supprimer:  ");
+        printf("\n Veuillez entrer le numéro de carte de l'ordinateur que vous voulez supprimer:  ");
         scanf("%d",&indice);
-        while (indice > *nbreOrdi || indice <= 0 )
+        for (int i=0; i< *nbreOrdi; i++)
         {
-            printf("\n Aucune correspondance pour cet indice. Réessayez! ");
-            scanf("%d", &indice);
-            printf("\n");
+            if ((*(listeOrdinateur+i))->numCarte==indice)
+            {
+                free(*(listeOrdinateur + i));
+                 for (tmpPtr = listeOrdinateur+i; tmpPtr < (listeOrdinateur+((*nbreOrdi)-1)); tmpPtr++)
+                {
+                    *tmpPtr = *(tmpPtr+1);
+                }
+                (*nbreOrdi)--;
+                deja = 1;
+                printf("\n Votre ordinateur de numéro de carte %d a bien été supprimé de la liste de vos ordinateurs. Merci! \n", indice);
+            }
         }
-
-        free(*(listeOrdinateur + (indice -1)));
-        (*nbreOrdi)--;
-        for (tmpPtr = listeOrdinateur+(indice-1); tmpPtr < (listeOrdinateur+((*nbreOrdi)-1)); tmpPtr++)
+        if(!deja)
         {
-            *tmpPtr = *(tmpPtr+1);
+            printf("\n Numéro de carte invalide!\n ");
         }
-        printf("\n Votre ordinateur %d a bien été supprimé de la liste de vos ordinateurs. Merci! \n", indice);
     }
+
 }
 
 
@@ -110,18 +116,17 @@ void supprimer_Ordinateur(Tordinateur **listeOrdinateur, int *nbreOrdi)
 void informations_desOrdinateurs( Tordinateur **listeOrdinateur, int nbreOrdi)
 {
     Tordinateur** tmpPtr;
-    int cpt = 0;
      if (nbreOrdi == 0 )
     {
-        printf("\n Votre park est vide pour le moment! Veuillez saisir les informations d'au moins un ordinateur! Merci\n ");
+        printf("\n Votre park est vide pour le moment!\n");
+        printf("\n Veuillez saisir les informations d'au moins un ordinateur! Merci\n ");
     }
     else
     {
         for (tmpPtr = listeOrdinateur; tmpPtr < listeOrdinateur + (nbreOrdi); tmpPtr ++)
         {
-            printf("\n Ordinateur N° %d |Marque : %s |Numéro de série : %s |Ram(Go): %d | Prix estimé(FCFA) :%d  ",cpt+1, (*tmpPtr)->marque,(*tmpPtr)->numSerie, (*tmpPtr)->ram, (*tmpPtr)->prixEstime);
-            printf("\n-------------------- -------------------- -------------------- -------------------- -------");
-            cpt++;
+            printf("\n Ordinateur de N°de carte: %d |Marque : %s |Numéro de série : %s |Ram(Go): %d | Prix estimé(FCFA) :%d  ",(*tmpPtr)->numCarte, (*tmpPtr)->marque,(*tmpPtr)->numSerie, (*tmpPtr)->ram, (*tmpPtr)->prixEstime);
+            printf("\n-------------------- -------------------- -------------------- -------------------- -------------------");
         }
     }
 }
@@ -130,35 +135,43 @@ void informations_desOrdinateurs( Tordinateur **listeOrdinateur, int nbreOrdi)
 // Fonction 4 d'affichage des informations d'un ordinateur
 void afficher_details_d_un_ordinateur (Tordinateur ** listeOrdinateur, int nbreOrdi)
 
-// indice c'est l'indice du pc dont l'utilisateur veut lire les informations
 {
+
+    int deja = 0;
      if (nbreOrdi == 0 )
     {
-        printf("\n Votre park est vide pour le moment! Veuillez saisir les informations d'au moins un ordinateur! Merci\n ");
+        printf("\n Votre park est vide pour le moment!\n");
+        printf("\n Veuillez saisir les informations d'au moins un ordinateur! Merci\n ");
     }
     else
     {
-
         int indice;
         Tordinateur **tmpPtr;
-        printf("\n Veuillez entrer l'indice de l'ordinateur que vous recherchez: ");
+        printf("\n Veuillez entrer le numéro de carte de l'ordinateur que vous recherchez: ");
         scanf("%d",&indice);
-        while ( (indice > nbreOrdi) || (indice <= 0 ) || (*(listeOrdinateur + (indice -1))== NULL))
+        for (tmpPtr=listeOrdinateur; tmpPtr < listeOrdinateur+nbreOrdi; tmpPtr++)
         {
-            printf("\n Aucune correspondance pour cet indice. Réessayez! ");
-            scanf("%d", &indice);
+            if ((*tmpPtr)->numCarte == indice)
+            {
+                printf("\n ---------Information de l'ordinateur ---------");
+                printf("\n*         Numéro de carte:      %d", (*tmpPtr)->numCarte);
+                printf("\n*         Spécialié:            %s", (*tmpPtr)->specialite);
+                printf("\n*         Numéro de série:      %s", (*tmpPtr)->numSerie);
+                printf("\n*         Marque:               %s", (*tmpPtr)->marque);
+                printf("\n*         Vitesse du CPU:       %.2f", (*tmpPtr)->vitesseCPU);
+                printf("\n*         Ram (Go):             %d", (*tmpPtr)->ram);
+                printf("\n*         Taille du disque dur: %d", (*tmpPtr)->tailleDisque);
+                printf("\n*         Prix estimé:          %d", (*tmpPtr)->prixEstime);
+                printf("\n --------------------------------------------------\n");
+                deja = 1;
+
+            }
         }
-        tmpPtr = listeOrdinateur + (indice -1);
-        printf("\n ---------Information de l'ordinateur N° %d---------", indice);
-        printf("\n*         Numéro de carte:      %d", (*tmpPtr)->numCarte);
-        printf("\n*         Spécialié:            %s", (*tmpPtr)->specialite);
-        printf("\n*         Numéro de série:      %s", (*tmpPtr)->numSerie);
-        printf("\n*         Marque:               %s", (*tmpPtr)->marque);
-        printf("\n*         Vitesse du CPU:       %f", (*tmpPtr)->vitesseCPU);
-        printf("\n*         Ram (Go):             %d", (*tmpPtr)->ram);
-        printf("\n*         Taille du disque dur: %d", (*tmpPtr)->tailleDisque);
-        printf("\n*         Prix estimé:          %d", (*tmpPtr)->prixEstime);
-        printf("\n --------------------------------------------------\n");
+        if(deja == 0)
+        {
+            printf("\n Numéro de carte invalide! \n");
+        }
+
     }
 }
 
@@ -168,7 +181,8 @@ void calculer_sommePrix(Tordinateur **listeOrdinateur , int nbreOrdi)
 {
      if (nbreOrdi == 0 )
     {
-        printf("\n Votre park est vide pour le moment! Veuillez saisir les informations d'au moins un ordinateur! Merci\n ");
+        printf("\n Votre park est vide pour le moment!\n");
+        printf("\n Veuillez saisir les informations d'au moins un ordinateur! Merci\n ");
     }
     else
     {
