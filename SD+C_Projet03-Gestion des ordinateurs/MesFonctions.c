@@ -109,9 +109,6 @@ void informations_desOrdinateurs( Tordinateur **listeOrdinateur, int nbreOrdi)
     }
     else
     {
-        printf("\n");
-        printf("  Indice de l'ordi  |       Marque       |  Numéro de série   |       Ram(Go)      |  Prix estimé(FCFA) |");
-        printf("\n-------------------- -------------------- -------------------- -------------------- ---------------------");
         Tordinateur **tmpPtr;
         for (tmpPtr = listeOrdinateur; tmpPtr < listeOrdinateur + (nbreOrdi); tmpPtr ++)
         {
@@ -121,8 +118,8 @@ void informations_desOrdinateurs( Tordinateur **listeOrdinateur, int nbreOrdi)
                 tmpPtr = tmpPtr + 1;
                 cpt ++;
             }
-            printf("\n   Ordinateur N° %d           %s                  %s                  %d                   %d         ",cpt, (*tmpPtr)->marque,(*tmpPtr)->numSerie, (*tmpPtr)->ram, (*tmpPtr)->prixEstime);
-            printf("\n-------------------- -------------------- -------------------- -------------------- ---------------------");
+            printf("\n Ordinateur N° %d |Marque : %s |Numéro de série : %s |Ram(Go): %d | Prix estimé(FCFA) :%d  ",cpt, (*tmpPtr)->marque,(*tmpPtr)->numSerie, (*tmpPtr)->ram, (*tmpPtr)->prixEstime);
+            printf("\n-------------------- -------------------- -------------------- -------------------- -------");
         }
     }
 }
