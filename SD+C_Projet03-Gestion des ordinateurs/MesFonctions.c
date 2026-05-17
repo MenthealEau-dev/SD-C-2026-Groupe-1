@@ -24,15 +24,17 @@ Tordinateur** mallocation()
 }
 // Fonction 1 de saisie des informations de tous les ordinateurs
 
-Tordinateur **saisir_listeOrdinateur(Tordinateur **listeOrdinateur, int nbreOrdi, int cpt)
+Tordinateur **saisir_listeOrdinateur(Tordinateur **listeOrdinateur, int *nbreOrdi)
 {
 
-    if(nbreOrdi > TAB_MAX )
+    if(*nbreOrdi > TAB_MAX )
     {
         printf("\n La taille maximal de votre Tableau est atteinte! Votre park est donc plein.");
     }
 
-    (*(listeOrdinateur + (nbreOrdi - 1))) = ajouter_ordinateur(cpt);
+    (*nbreOrdi)++;
+    (*(listeOrdinateur + (*nbreOrdi - 1))) = ajouter_ordinateur(*nbreOrdi);
+
 
     return listeOrdinateur;
 }
@@ -48,7 +50,7 @@ Tordinateur *ajouter_ordinateur(int cpt)
         printf("\n Allocation échoué");
         exit (1);
     }
-    printf("\n --------Information de l'ordinateur %d----------\n", cpt+1);
+    printf("\n --------Information de l'ordinateur %d----------\n", cpt);
     printf("\n Entrer le numéro de la carte: ");
     scanf("%d", &nouvelOrdinateur->numCarte);
     printf("\n Entrer la spécialité du détenteur: ");
@@ -73,9 +75,10 @@ Tordinateur *ajouter_ordinateur(int cpt)
 
 
 // Fonction 2 de suppression d'un ordinateur
-void supprimer_Ordinateur(Tordinateur **listeOrdinateur, int nbreOrdi)
+void supprimer_Ordinateur(Tordinateur **listeOrdinateur, int *nbreOrdi)
 {
-    if (nbreOrdi == 0 )
+    Tordinateur** tmpPtr;
+    if (*nbreOrdi == 0 )
     {
         printf("\n Votre park est vide pour le moment! Veuillez saisir les informations d'au moins un ordinateur! Merci\n ");
     }
@@ -85,15 +88,19 @@ void supprimer_Ordinateur(Tordinateur **listeOrdinateur, int nbreOrdi)
         int indice;
         printf("\n Veuillez entrer l'indice de l'ordinateur que vous voulez supprimer:  ");
         scanf("%d",&indice);
-        while (indice > nbreOrdi || indice <= 0 )
+        while (indice > *nbreOrdi || indice <= 0 )
         {
             printf("\n Aucune correspondance pour cet indice. Réessayez! ");
             scanf("%d", &indice);
             printf("\n");
         }
 
-        free(listeOrdinateur + (indice -1));
-        *(listeOrdinateur + (indice -1)) = NULL;
+        free(*(listeOrdinateur + (indice -1)));
+        (*nbreOrdi)--;
+        for (tmpPtr = listeOrdinateur+(indice-1); tmpPtr < (listeOrdinateur+((*nbreOrdi)-1)); tmpPtr++)
+        {
+            *tmpPtr = *(tmpPtr+1);
+        }
         printf("\n Votre ordinateur %d a bien été supprimé de la liste de vos ordinateurs. Merci! \n", indice);
     }
 }
@@ -102,24 +109,19 @@ void supprimer_Ordinateur(Tordinateur **listeOrdinateur, int nbreOrdi)
 // Fonction 3 pour lister l'ensemble des informations
 void informations_desOrdinateurs( Tordinateur **listeOrdinateur, int nbreOrdi)
 {
-    int cpt =0;
+    Tordinateur** tmpPtr;
+    int cpt = 0;
      if (nbreOrdi == 0 )
     {
         printf("\n Votre park est vide pour le moment! Veuillez saisir les informations d'au moins un ordinateur! Merci\n ");
     }
     else
     {
-        Tordinateur **tmpPtr;
         for (tmpPtr = listeOrdinateur; tmpPtr < listeOrdinateur + (nbreOrdi); tmpPtr ++)
         {
-            cpt++;
-            while((*tmpPtr) ==  NULL && cpt <  nbreOrdi)
-            {
-                tmpPtr = tmpPtr + 1;
-                cpt ++;
-            }
-            printf("\n Ordinateur N° %d |Marque : %s |Numéro de série : %s |Ram(Go): %d | Prix estimé(FCFA) :%d  ",cpt, (*tmpPtr)->marque,(*tmpPtr)->numSerie, (*tmpPtr)->ram, (*tmpPtr)->prixEstime);
+            printf("\n Ordinateur N° %d |Marque : %s |Numéro de série : %s |Ram(Go): %d | Prix estimé(FCFA) :%d  ",cpt+1, (*tmpPtr)->marque,(*tmpPtr)->numSerie, (*tmpPtr)->ram, (*tmpPtr)->prixEstime);
             printf("\n-------------------- -------------------- -------------------- -------------------- -------");
+            cpt++;
         }
     }
 }
@@ -175,10 +177,7 @@ void calculer_sommePrix(Tordinateur **listeOrdinateur , int nbreOrdi)
         Tordinateur **tmpPtr;
         for (tmpPtr = listeOrdinateur; tmpPtr < listeOrdinateur + nbreOrdi; tmpPtr ++)
         {
-            while((*tmpPtr) ==  NULL)
-            {
-                tmpPtr = tmpPtr + 1;
-            }
+
             sommep += (*tmpPtr)->prixEstime;
         }
         printf("\n La somme totale du prix des ordinateurs s'élève à %d FCFA \n", sommep);

@@ -45,7 +45,7 @@ int main(void)
     int menu;
     int nbreOrdi = 0;
     int sortie = 0;
-    int cpt = 0;
+
 
 
     park = mallocation();
@@ -61,8 +61,9 @@ int main(void)
         printf("*       5: REPARTITION PAR SPECIALITE       *\n");
         printf("*       6: REPARTITION PAR MARQUE           *\n");
         printf("*       7: TRI PAR VITESSE DU CPU           *\n");
+        printf("*       8: VALEUR TOTAL DU PARK             *\n");
         printf("*       0: EXIT                             *\n");
-         printf("*                                           *\n");
+        printf("*                                           *\n");
         printf("=============================================\n");
         printf("\n VEUILLEZ CHOISIR UN MENU: ");
         scanf("%d",&menu);
@@ -71,13 +72,11 @@ int main(void)
         {
             case 1:
                 printf("\n======MENU AJOUT D'ORDINATEUR ======\n");
-                nbreOrdi ++;
-                park = saisir_listeOrdinateur(park,nbreOrdi,cpt);
-                cpt++;
+                park = saisir_listeOrdinateur(park,&nbreOrdi);
                 break;
             case 2:
                 printf("\n======MENU SUPPRESSION D'ORDINATEUR======\n");
-                supprimer_Ordinateur(park, nbreOrdi);
+                supprimer_Ordinateur(park, &nbreOrdi);
                 break;
             case 3:
                 printf("\n======MENU LISTE DES ORDINATEURS======\n");

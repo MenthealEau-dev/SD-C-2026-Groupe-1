@@ -10,6 +10,7 @@
 
 void repartitonSpecialite(Tordinateur **listeOrdinateur, int nbreOrdi)
 {
+
      if (nbreOrdi == 0 )
     {
         printf("\n Votre park est vide pour le moment! Veuillez saisir les informations d'au moins un ordinateur! Merci\n ");

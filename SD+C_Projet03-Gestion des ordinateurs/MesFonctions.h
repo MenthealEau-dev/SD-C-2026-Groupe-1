@@ -29,7 +29,7 @@ Tordinateur ** mallocation();
 
 // prototype 1 de la fonction de saisie des informations de tous les oridinatateurs
 
-Tordinateur **saisir_listeOrdinateur(Tordinateur**park, int nbreOrdi, int cpt);
+Tordinateur **saisir_listeOrdinateur(Tordinateur**park, int *nbreOrdi);
 
 // prototype  de la fonction de saisie des informations d'un oridinataur
 
@@ -37,7 +37,7 @@ Tordinateur* ajouter_ordinateur(int cpt);
 
 // prototype 2 de la fonction de suppression d'un ordinateur
 
-void supprimer_Ordinateur(Tordinateur **listeOrdinateur, int nbreOrdi);
+void supprimer_Ordinateur(Tordinateur **listeOrdinateur, int *nbreOrdi);
 
 // prototype 3 de la fonction d'affichage des informations générales de tous les oridinateurs
 
