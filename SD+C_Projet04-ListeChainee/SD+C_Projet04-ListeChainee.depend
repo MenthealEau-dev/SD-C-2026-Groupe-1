@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1781024272 source:c:\users\dell\documents\codeblocks\sd+c_2026_groupe_1\sd+c_projet04-listechainee\liste.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"liste.h"
+
+1780994142 c:\users\dell\documents\codeblocks\sd+c_2026_groupe_1\sd+c_projet04-listechainee\liste.h
+
+1781024097 source:c:\users\dell\documents\codeblocks\sd+c_2026_groupe_1\sd+c_projet04-listechainee\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"liste.h"
+
