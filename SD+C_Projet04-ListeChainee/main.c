@@ -2,11 +2,10 @@
 
 ********************************************************
 
-  Programme :  Gestion des ordinateurs
-              par des étudiants en SD+C .
-  Nom : SD+C - Gestion d'entiers à partir
-                d'une liste chaînée
-   Auteurs :
+  Programme :  Gestion d'entiers à partir
+                d'une liste chaînée.
+  Nom :      SD+C-2026-Groupe-1-Liste chaînée
+  Auteurs :
             1. ABIDI Mawusé Jean-Marie Gédéon (GM)
             2. AKONDO Samihatou               (GC)
             3. AKOTSU Yao Aurelien Placide    (GM)
