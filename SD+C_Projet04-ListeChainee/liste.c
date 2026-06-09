@@ -219,7 +219,8 @@ void afficher (TListe * liste)
 int menu()
 {
     int choix;
-    printf ("\n\n================================================");
+    printf("\n");
+    printf ("\n==================================================");
     printf ("\n*          GESTION DE LISTE D'ENTIERS            *");
     printf ("\n==================================================");
     printf ("\n*             BIENVENUE AU MENU                  *");
