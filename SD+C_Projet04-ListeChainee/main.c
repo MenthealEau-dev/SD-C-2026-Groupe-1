@@ -51,7 +51,7 @@ int main()
         {
         case 1:
             if(liste->taille == 0){
-                printf("AJOUT DANS UNE LISTE VIDE\n");
+                printf("\nAJOUT DANS UNE LISTE VIDE\n");
                 saisir_informations(&valeur);
                 inserer_dans_liste_vide(liste,valeur);
                 afficher(liste);
@@ -62,10 +62,10 @@ int main()
             break;
         case 2:
             if(liste->taille == 0){
-                printf("Votre liste est vide. Veuillez vous référer au menu 1.");
+                printf("\nVotre liste est vide. Veuillez vous référer au menu 1.");
             }
             else{
-                printf("AJOUT AU DEBUT DE LA LISTE\n");
+                printf("\nAJOUT AU DEBUT DE LA LISTE\n");
                 saisir_informations(&valeur);
                 inserer_en_tete_de_liste(liste,valeur);
                 afficher(liste);
@@ -73,10 +73,10 @@ int main()
             break;
         case 3:
             if(liste->taille == 0){
-                printf("Votre liste est vide. Veuillez vous référer au menu 1.");
+                printf("\nVotre liste est vide. Veuillez vous référer au menu 1.");
             }
             else{
-                printf("AJOUT A LA  FIN DE LA LISTE\n");
+                printf("\nAJOUT A LA  FIN DE LA LISTE\n");
                 saisir_informations(&valeur);
                 inserer_en_queue_de_liste(liste,valeur);
                 afficher(liste);
@@ -84,13 +84,13 @@ int main()
             break;
         case 4:
             if(liste->taille == 0){
-                printf("Votre liste est vide. Veuillez vous référer au menu 1.");
+                printf("\nVotre liste est vide. Veuillez vous référer au menu 1.");
             }
             else{
-                printf("AJOUT APRES UNE POSITION SPECIFIQUE\n");
+                printf("\nAJOUT APRES UNE POSITION SPECIFIQUE\n");
                 while(position < 1 || position > liste->taille)
                 {
-                    printf("Veuillez entrer une position positive non nulle inférieure ou égale à %d : ", liste->taille );
+                    printf("\nVeuillez entrer une position positive non nulle inférieure ou égale à %d : ", liste->taille );
                     scanf("%d", &position);
                 }
                 saisir_informations(&valeur);
@@ -101,13 +101,13 @@ int main()
             break;
         case 5:
             if(liste->taille == 0){
-                printf("Votre liste est vide. Veuillez vous référer au menu 1.");
+                printf("\nVotre liste est vide. Veuillez vous référer au menu 1.");
             }
             else{
-                printf("SUPPRESSION AU DEBUT DE LA LISTE\n");
+                printf("\nSUPPRESSION AU DEBUT DE LA LISTE\n");
                 if(liste->taille == 1){
-                    printf("Voulez vous détruire la liste?");
-                    printf("\nSi oui tapez 1 si non tapez 0 : ");
+                    printf("\nVoulez vous détruire la liste?");
+                    printf("\n\nSi oui tapez 1 si non tapez 0 : ");
                     scanf("%d",&position);
                     if(position == 1)
                         detruire_liste(liste);
@@ -120,13 +120,13 @@ int main()
             break;
         case 6:
             if(liste->taille == 0){
-                printf("Votre liste est vide. Veuillez vous référer au menu 1.");
+                printf("\nVotre liste est vide. Veuillez vous référer au menu 1.");
             }
             else{
-                printf("SUPPRESSION APRES UNE POSITION SPECIFIQUE\n");
+                printf("\nSUPPRESSION APRES UNE POSITION SPECIFIQUE\n");
                 while(position < 1 || position > liste->taille)
                 {
-                    printf("Veuillez entrer une position positive non nulle inférieure ou égale à %d : ", liste->taille );
+                    printf("\nVeuillez entrer une position positive non nulle inférieure ou égale à %d : ", liste->taille );
                     scanf("%d", &position);
                 }
                 supprimer_dans_liste(liste,position);
@@ -137,17 +137,17 @@ int main()
             break;
         case 7:
             if(liste->taille == 0){
-                printf("Votre liste est vide. Veuillez vous référer au menu 1.");
+                printf("\nVotre liste est vide. Veuillez vous référer au menu 1.");
             }
             else{
-                printf("DESTRUCTION DE LA LISTE");
+                printf("\nDESTRUCTION DE LA LISTE");
                 detruire_liste(liste);
             }
             break;
         case 8:
             break;
         default:
-            printf("Veuillez choisir un menu correct compris entre 1 et 8! Merci ");
+            printf("\nVeuillez choisir un menu correct compris entre 1 et 8! Merci ");
             break;
         }
     }

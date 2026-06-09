@@ -68,8 +68,8 @@ int inserer_en_position(TListe *liste, int valeur, int position)
     int choix;
     if(liste->taille < 2)
     {
-       printf("Pour ce faire, nous allons procéder à l'insertion en fin de liste");
-       printf("\nVoulez vous procéder à cette insertion? Si oui taper 1 sinon taper 0 : ");
+       printf("\nPour ce faire, nous allons procéder à l'insertion en fin de liste");
+       printf("\n\nVoulez vous procéder à cette insertion? Si oui taper 1 sinon taper 0 : ");
        scanf("%d",&choix);
        if(choix == 1)
         inserer_en_queue_de_liste(liste,valeur);
@@ -78,8 +78,8 @@ int inserer_en_position(TListe *liste, int valeur, int position)
     {
         if(position == liste->taille)
         {
-            printf("Veuillez utiliser le menu d'insertion en fin de liste (Menu 3)! Merci ");
-            printf("\nVoulez vous procéder à cette insertion? Si oui tapez 1,sinon tapez 0 : ");
+            printf("\nVeuillez utiliser le menu d'insertion en fin de liste (Menu 3)! Merci ");
+            printf("\n\nVoulez vous procéder à cette insertion? Si oui tapez 1,sinon tapez 0 : ");
             scanf("%d",&choix);
             if(choix == 1)
                 inserer_en_queue_de_liste(liste,valeur);
@@ -134,9 +134,10 @@ int supprimer_dans_liste(TListe *liste, int position)
     {
         if(position == 1)
         {
-            printf("Aucun élément après la position 1");
-            printf("\nVotre liste ne contient qu'un seul élément.\nEssayez vous de détruire la liste?");
-            printf("\nSi oui tapez 1, sinon tapez 0 : ");
+            printf("\nAucun élément après la position 1");
+            printf("\n\nVotre liste ne contient qu'un seul élément.");
+            printf("\n\nEssayez vous de détruire la liste?");
+            printf("\n\nSi oui tapez 1, sinon tapez 0 : ");
             scanf("%d",&choix);
             if(choix == 1)
                 detruire_liste(liste);
@@ -145,7 +146,7 @@ int supprimer_dans_liste(TListe *liste, int position)
     else
     {
         if(position == liste->taille)
-            printf("Aucun élément n'existe après la position %d", liste->taille);
+            printf("\nAucun élément n'existe après la position %d", liste->taille);
         else{
             TElement *courant;
             if((courant = (TElement*)malloc(sizeof(TElement))) == NULL)
@@ -245,7 +246,7 @@ int menu()
 
 void saisir_informations(int *valeur)
 {
-    printf("Entrer un élément : ");
+    printf("\nEntrer un élément : ");
     scanf("%d", valeur);
 }
 
