@@ -173,7 +173,7 @@ int supprimer_dans_liste(TListe *liste, int position)
 
 void detruire_liste (TListe * liste)
 {
-    printf("\nDestruction en cours....");
+    printf("\n\nDestruction en cours....");
     while (liste->taille > 0)
         supprimer_en_debut_de_liste(liste);
     printf("\n\nVotre liste a bien été supprimée");
