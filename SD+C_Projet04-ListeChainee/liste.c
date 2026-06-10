@@ -176,7 +176,7 @@ void detruire_liste (TListe * liste)
     printf("\nDestruction en cours....");
     while (liste->taille > 0)
         supprimer_en_debut_de_liste(liste);
-    printf("\nVotre liste a bien été supprimée");
+    printf("\n\nVotre liste a bien été supprimée");
 }
 
 /* Création de la fonction d'affichage de la liste */
