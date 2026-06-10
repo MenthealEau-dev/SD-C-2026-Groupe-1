@@ -146,7 +146,7 @@ int supprimer_dans_liste(TListe *liste, int position)
     else
     {
         if(position == liste->taille)
-            printf("\nAucun élément n'existe après la position %d", liste->taille);
+            printf("\nAucun élément n'existe après la position %d\n", liste->taille);
         else{
             TElement *courant;
             if((courant = (TElement*)malloc(sizeof(TElement))) == NULL)
