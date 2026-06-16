@@ -53,7 +53,6 @@ int main()
                 printf("\nAJOUT DANS UNE LISTE VIDE\n");
                 saisir_informations(&valeur);
                 inserer_dans_liste_vide(liste,valeur);
-                afficher(liste);
             }
             else{
                 printf("\nVotre liste n'est plus vide");
@@ -67,7 +66,6 @@ int main()
                 printf("\nAJOUT AU DEBUT DE LA LISTE\n");
                 saisir_informations(&valeur);
                 inserer_en_tete_de_liste(liste,valeur);
-                afficher(liste);
             }
             break;
         case 3:
@@ -78,7 +76,6 @@ int main()
                 printf("\nAJOUT A LA  FIN DE LA LISTE\n");
                 saisir_informations(&valeur);
                 inserer_en_queue_de_liste(liste,valeur);
-                afficher(liste);
             }
             break;
         case 4:
@@ -94,7 +91,6 @@ int main()
                 }
                 saisir_informations(&valeur);
                 inserer_en_position(liste,valeur,position);
-                afficher(liste);
                 position = 0;
             }
             break;
@@ -113,7 +109,6 @@ int main()
                 }
                 else{
                     supprimer_en_debut_de_liste(liste);
-                    afficher(liste);
                 }
             }
             break;
@@ -129,8 +124,6 @@ int main()
                     scanf("%d", &position);
                 }
                 supprimer_dans_liste(liste,position);
-                if(liste->taille != 0)
-                    afficher(liste);
                 position = 0;
             }
             break;
@@ -149,6 +142,7 @@ int main()
             printf("\nVeuillez choisir un menu correct compris entre 1 et 8! Merci ");
             break;
         }
+        afficher(liste);
     }
     printf("\nMerci d'avoir visité notre menu!\n");
 

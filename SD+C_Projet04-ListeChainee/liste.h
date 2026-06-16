@@ -3,6 +3,7 @@
 
 /*========== liste.h=============*/
 
+// Création et définition de la structure TElement
 
 typedef struct TElement TElement;
 struct TElement
@@ -10,6 +11,8 @@ struct TElement
     int value;
     TElement *next;
 };
+
+// Création et définition de la structure TListe
 
 typedef struct TListe TListe;
 struct TListe

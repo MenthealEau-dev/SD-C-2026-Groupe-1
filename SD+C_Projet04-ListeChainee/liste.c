@@ -183,33 +183,35 @@ void detruire_liste (TListe * liste)
 
 void afficher (TListe * liste)
 {
-    int cpt = 0;
-    TElement *balayeur;
-    balayeur = liste->first;
-    printf("\nCONTENU DE LA LISTE\n");
-    printf("\n%d elements:\t deb = %d \t\t fin = %d\n",
-    liste->taille,
-    liste->first->value,
-    liste->last->value);
-
-    printf("\n|POSITION\t|ADRESSE\t\t|DONNEE\t\t|SUIVANT");
-    printf("\n------------------------------------------------------------------");
-    while (balayeur != NULL)
+    if(liste->taille != 0)
     {
-        printf ("\n|%d\t\t|%p\t\t|%d\t\t|%p|",
-                 ++cpt,
-                 balayeur,
-                 balayeur->value,
-                 balayeur->next);
-        printf("\n------------------------------------------------------------------");
-        balayeur = balayeur->next;
-    }
-    printf("\n");
-    printf ("\n%d elements:\tADR_deb = %p  \t ADR_fin = %p\n",
-    liste->taille,
-    liste->first,
-    liste->last);
+        int cpt = 0;
+        TElement *balayeur;
+        balayeur = liste->first;
+        printf("\nCONTENU DE LA LISTE\n");
+        printf("\n%d elements:\t deb = %d \t\t fin = %d\n",
+        liste->taille,
+        liste->first->value,
+        liste->last->value);
 
+        printf("\n|POSITION\t|ADRESSE\t\t|DONNEE\t\t|SUIVANT");
+        printf("\n------------------------------------------------------------------");
+        while (balayeur != NULL)
+        {
+            printf ("\n|%d\t\t|%p\t\t|%d\t\t|%p|",
+                     ++cpt,
+                     balayeur,
+                     balayeur->value,
+                     balayeur->next);
+            printf("\n------------------------------------------------------------------");
+            balayeur = balayeur->next;
+        }
+        printf("\n");
+        printf ("\n%d elements:\tADR_deb = %p  \t ADR_fin = %p\n",
+        liste->taille,
+        liste->first,
+        liste->last);
+    }
 }
 
 
