@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "fonction.h"
+
+
+
+int main() {
+    int n, choix;
+    TPolynome *resultat = NULL;
+
+    printf("=== MENU OPERATION POLYNOMES ===\n");
+    printf("1. Additionner des polynomes\n");
+    printf("2. Soustraire des polynomes \n");
+    printf("Votre choix : ");
+    if (scanf("%d", &choix) != 1 || (choix != 1 && choix != 2)) {
+        printf("Choix invalide.\n");
+        return 1;
+    }
+
+    printf("Combien de polynomes voulez-vous manipuler ? ");
+    if (scanf("%d", &n) != 1 || n <= 0) return 1;
+
+    TPolynome **tableau_polynomes = (TPolynome**) malloc(n * sizeof(TPolynome*));
+
+    for (int i = 0; i < n; i++) {
+        tableau_polynomes[i] = allocation();
+        saisiePolynome(tableau_polynomes[i], i + 1);
+    }
+
+    printf("\n==================================\n");
+    for (int i = 0; i < n; i++) {
+        printf("P%d : ", i + 1);
+        afficher_polynome(tableau_polynomes[i]);
+    }
+    printf("----------------------------------\n");
+
+    if (choix == 1) {
+        resultat = sommer_polynomes(tableau_polynomes, n);
+        printf("Somme finale : ");
+    } else {
+        resultat = soustraire_polynomes(tableau_polynomes, n);
+        printf("Difference finale : ");
+    }
+
+    afficher_polynome(resultat);
+    printf("==================================\n");
+
+    enregistrer_polynome_fichier(resultat, "resultat.txt");
+
+    for (int i = 0; i < n; i++) {
+        liberer_polynome(tableau_polynomes[i]);
+    }
+    free(tableau_polynomes);
+    liberer_polynome(resultat);
+
+    return 0;
+}
