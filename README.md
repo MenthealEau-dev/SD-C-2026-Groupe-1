@@ -1,1 +1,0 @@
-﻿SD+C Opérations sur des Polynômes
