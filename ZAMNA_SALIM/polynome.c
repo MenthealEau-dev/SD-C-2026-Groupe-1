@@ -144,6 +144,77 @@ Tpolynome *addition_de_polynomes(Tpolynome *polynome1, Tpolynome *polynome2)
 }
 
 
+//soustraction de deux polynomes
+Tpolynome *soustraction_de_polynomes(Tpolynome *polynome1, Tpolynome *polynome2)
+{
+    Tpolynome *differencePolynome;
+    Telement *courant1 = polynome1 ->debut;
+    Telement *courant2 = polynome2 ->debut;
+    int diff = 0;
+    int option;
+
+    if ((differencePolynome = (Tpolynome*) malloc(sizeof(Tpolynome))) == NULL)
+        exit(-1);
+    initialise_polynome(differencePolynome);
+
+    printf("\nSi vous voulez faire le premier polynome moins le second, taper 1\nSinon taper 2 : ");
+    scanf("%d",&option);
+
+    if (option == 1){
+        while (courant1 != NULL && courant2 != NULL){
+            diff = courant1 ->monome.coeff - courant2 ->monome.coeff;
+            saisi_dans_polynome(differencePolynome, diff);
+            courant1 = courant1 ->suivant;
+            courant2 = courant2 ->suivant;
+        }
+
+        while(courant1 != NULL){
+            saisi_dans_polynome(differencePolynome, courant1 ->monome.coeff);
+            courant1 = courant1 ->suivant;
+        }
+
+        while(courant2 != NULL){
+            saisi_dans_polynome(differencePolynome, -courant2 ->monome.coeff);
+            courant2 = courant2 ->suivant;
+        }
+    }
+    else if (option == 2){
+        while (courant1 != NULL && courant2 != NULL){
+            diff = courant2 ->monome.coeff - courant1 ->monome.coeff;
+            saisi_dans_polynome(differencePolynome, diff);
+            courant1 = courant1 ->suivant;
+            courant2 = courant2 ->suivant;
+        }
+
+        while(courant1 != NULL){
+            saisi_dans_polynome(differencePolynome, -courant1 ->monome.coeff);
+            courant1 = courant1 ->suivant;
+        }
+
+        while(courant2 != NULL){
+            saisi_dans_polynome(differencePolynome, courant2 ->monome.coeff);
+            courant2 = courant2 ->suivant;
+        }
+    }
+    else printf("\nOption Invalide");
+
+    return differencePolynome;
+}
+
+
+//liberer memoire
+void liberer_polynome(Tpolynome *polynome)
+{
+    Telement *courant = polynome->debut;
+    Telement *suivant;
+    while (courant != NULL) {
+        suivant = courant->suivant;
+        free(courant);
+        courant = suivant;
+    }
+    free(polynome);
+}
+
 
 //menu pour les operations
 int menu()
