@@ -56,12 +56,20 @@ int entrez_informations (Tpolynome *polynome1, Tpolynome *polynome2);
 void afficher_polynome (Tpolynome *polynome);
 
 
+//liberer memoire
+void liberer_polynome(Tpolynome *polynome);
+
+
 //afficher le menu
 int menu();
 
 
 //addition de deux polynomes
 Tpolynome *addition_de_polynomes(Tpolynome *polynome1, Tpolynome *polynome2);
+
+
+//soustraction de deux polynomes
+Tpolynome *soustraction_de_polynomes(Tpolynome *polynome1, Tpolynome *polynome2);
 
 
 //
