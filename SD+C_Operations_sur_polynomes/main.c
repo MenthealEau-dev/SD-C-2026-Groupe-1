@@ -68,6 +68,48 @@ int choix = 0;
             detruire_polynome(polynome3); free(polynome3);
 
             break;
+            case 2:
+            polynome1 = creer_initialiser_poly();
+            polynome2 = creer_initialiser_poly();
+
+            printf("\nSAISIE DES INFORMATIONS SUR LES DEUX POLYNOMES : \n");
+            saisir_infoPolynome(polynome1,1);
+            afficher_polynome(polynome1,1);
+            saisir_infoPolynome(polynome2,2);
+            afficher_polynome(polynome2,2);
+
+            printf("\nSOUSTRACTION DES DEUX POLYNOMES : ");
+            printf("\n\nQuelle soustraction voulez vous effectuez?");
+            printf("\n\n1- Polyn�me N�1 - Polyn�me N�2\n");
+            printf("\n\n2- Polyn�me N�2 - Polyn�me N�1\n");
+            while(decision!=1 && decision !=2)
+            {
+                printf("\nVeuillez choisir entre l'option 1 et 2 : ");
+                scanf("%d",&decision);
+            }
+            if(decision == 1)
+                polynome3 = soustraire_polynomes(polynome1,polynome2);
+            if(decision == 2)
+                polynome3 = soustraire_polynomes(polynome2,polynome1);
+            afficher_polynome(polynome3,3);
+            printf("\nSoustraction des deux polyn�mes r�ussie avec succ�s! Merci\n");
+
+            detruire_polynome(polynome1); free(polynome1);
+            detruire_polynome(polynome2); free(polynome2);
+            detruire_polynome(polynome3); free(polynome3);
+
+            break;
+
+        case 3:
+            break;
+
+        default:
+            printf("\nVeuillez choisir un menu correct compris entre 1 et 3! Merci _n");
+            break;
+        }
+    }
+    printf("\n\nMerci d'avoir visit� notre menu!\n");
+
     return 0;
 }
 
