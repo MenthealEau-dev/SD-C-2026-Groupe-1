@@ -91,4 +91,118 @@ void saisir_infoPolynome(TPolynome *polynome, int indice)
         scanf("%d",&choix);
     }
 }
+
+// 3-Création de la fonction d'affichage d'un polynôme
+
+void afficher_polynome(TPolynome *polynome, int indice)
+{
+    printf("\nAFFICHAGE : ");
+    if (polynome == NULL || polynome->first == NULL) {
+        printf("0 (Polynome vide)\n");
+        return;
+    }
+    int premier = 1;// Gestion du signe du premier élement
+    TCellule *balai;
+    balai = polynome->first;
+    while(balai != NULL)
+    {
+        if(balai->monome.coef != 0)
+        {
+            if(!premier && balai->monome.coef > 0)
+                printf("+");
+            if(balai->monome.degre == 0)
+                printf("%d ",balai->monome.coef);
+            else if(balai->monome.degre == 1)
+                printf("%dx ",balai->monome.coef);
+            else
+                printf("%dx^%d ",balai->monome.coef, balai->monome.degre);
+            premier = 0;
+        }
+        balai = balai->next;
+    }
+    printf("\n");
+}
+
+// 4-Création de la fonction d'addition de deux polynômes
+
+TPolynome *additionner_polynomes(TPolynome *polynome1, TPolynome *polynome2)
+{
+    int sumCoef, sumDegre;
+    TPolynome *relai;
+    if((relai = (TPolynome*)malloc(sizeof(TPolynome))) == NULL)
+        exit(1);
+    relai->first = relai->last = NULL;
+    relai->taille = 0;
+    TCellule *balai1;
+    TCellule *balai2;
+    balai1 = polynome1->first;
+    balai2 = polynome2->first;
+    while(balai1 != NULL && balai2 != NULL)
+    {
+        sumCoef = (balai1->monome.coef) + (balai2->monome.coef);
+        sumDegre = balai1->monome.degre;
+        inserer_dans_liste(relai,sumCoef,sumDegre);
+        balai1 = balai1->next;
+        balai2 = balai2->next;
+    }
+    if(balai1 == NULL)
+    {
+        while(balai2 != NULL)
+        {
+            inserer_en_queue_de_liste(relai,balai2->monome.coef,balai2->monome.degre);
+            balai2 = balai2->next;
+        }
+    }
+    if(balai2 == NULL)
+    {
+        while(balai1 != NULL)
+        {
+            inserer_en_queue_de_liste(relai,balai1->monome.coef,balai1->monome.degre);
+            balai1 = balai1->next;
+        }
+    }
+    return relai;
+}
+
+// 5-Création de la fonction de soustraction de deux polynômes
+
+TPolynome *soustraire_polynomes(TPolynome *polynome1, TPolynome *polynome2)
+{
+    int sumCoef, sumDegre;
+    TPolynome *relai;
+    if((relai = (TPolynome*)malloc(sizeof(TPolynome))) == NULL)
+        exit(1);
+    relai->first = relai->last = NULL;
+    relai->taille = 0;
+    TCellule *balai1;
+    TCellule *balai2;
+    balai1 = polynome1->first;
+    balai2 = polynome2->first;
+    while(balai1 != NULL && balai2 != NULL)
+    {
+        sumCoef = (balai1->monome.coef) - (balai2->monome.coef);
+        sumDegre = balai1->monome.degre;
+        inserer_dans_liste(relai,sumCoef,sumDegre);
+        balai1 = balai1->next;
+        balai2 = balai2->next;
+    }
+    if(balai1 == NULL)
+    {
+        while(balai2 != NULL)
+        {
+            inserer_en_queue_de_liste(relai,-(balai2->monome.coef),balai2->monome.degre);
+            balai2 = balai2->next;
+        }
+    }
+    if(balai2 == NULL)
+    {
+        while(balai1 != NULL)
+        {
+            inserer_en_queue_de_liste(relai,balai1->monome.coef,balai1->monome.degre);
+            balai1 = balai1->next;
+        }
+    }
+    return relai;
+}
+
 /*==============fin polynomes.c===================*/

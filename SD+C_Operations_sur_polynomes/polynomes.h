@@ -54,6 +54,19 @@ int inserer_dans_liste(TPolynome *polynome, int coef, int degre);
 
 void saisir_infoPolynome(TPolynome *polynome, int indice);
 
+// 3-Prototype de la fonction d'affichage d'un polynôme
+
+void afficher_polynome(TPolynome *polynome, int indice);
+
+// 4-Prototype de la fonction d'addition de deux polynômes
+
+TPolynome *additionner_polynomes(TPolynome *polynome1, TPolynome *polynome2);
+
+// 5-Prototype de la fonction de soustraction de deux polynômes
+
+TPolynome *soustraire_polynomes(TPolynome *polynome1, TPolynome *polynome2);
+
+
 /*==============fin polynomes.h==================*/
 
 #endif // POLYNOMES_H
