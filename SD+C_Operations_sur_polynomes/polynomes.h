@@ -38,6 +38,22 @@ struct TPolynome
 
 TPolynome *creer_initialiser_poly();
 
+// 2-1-1-Prototype de la fonction d'insertion dans une liste vide
+
+int inserer_dans_liste_vide(TPolynome *polynome, int coef, int degre);
+
+// 2-1-2-Prototype de la fonction d'insertion en fin de liste
+
+int inserer_en_queue_de_liste(TPolynome *polynome, int coef, int degre);
+
+//2-1-Prototype de la fonction d'insertion dans une liste
+
+int inserer_dans_liste(TPolynome *polynome, int coef, int degre);
+
+// 2-Prototype de la fonction de saisie des informations d'un polynome
+
+void saisir_infoPolynome(TPolynome *polynome, int indice);
+
 /*==============fin polynomes.h==================*/
 
 #endif // POLYNOMES_H
