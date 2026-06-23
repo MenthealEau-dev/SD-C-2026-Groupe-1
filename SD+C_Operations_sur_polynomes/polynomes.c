@@ -205,4 +205,45 @@ TPolynome *soustraire_polynomes(TPolynome *polynome1, TPolynome *polynome2)
     return relai;
 }
 
+// 6-Création de la fonction de destruction d'un polynôme
+
+void detruire_polynome(TPolynome *polynome)
+{
+        if(polynome->taille == 0)
+            return;
+        TCellule *elementsup;
+        TCellule *supsuivant;
+        elementsup = polynome->first;
+        while(elementsup != NULL)
+        {
+            supsuivant =elementsup->next;
+            free(elementsup);
+            elementsup = supsuivant;
+        }
+        polynome->first = NULL;
+        polynome->last = NULL;
+        polynome->taille = 0;
+
+}
+
+//0-Création de la fonction de menu
+
+int menuGeneral()
+{
+    int choix;
+    printf ("\n==================================================");
+    printf ("\n*   ADDITION ET SOUSTRACTION DE DEUX POLYNOMES   *");
+    printf ("\n==================================================");
+    printf ("\n*             BIENVENUE AU MENU                  *");
+    printf ("\n*------------------------------------------------*");
+    printf ("\n*    1. Addition de deux polynômes               *");
+    printf ("\n*    2. Soustraction de deux polynômes           *");
+    printf ("\n*    3. Quitter le Menu                          *");
+    printf ("\n==================================================");
+    printf ("\nFaites votre choix : ");
+    scanf ("%d", &choix);
+
+    return choix;
+}
+
 /*==============fin polynomes.c===================*/

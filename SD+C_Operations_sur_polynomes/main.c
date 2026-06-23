@@ -21,7 +21,7 @@
   Chargé de l'UE : Monsieur AKAKPO
   Niveau : L1 Semestre 2
   Date de création : 14/06/2026
-  Date de rendu : 16/06/2026
+  Date de rendu : 23/06/2026
 
 ********************************************************
 */

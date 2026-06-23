@@ -66,6 +66,13 @@ TPolynome *additionner_polynomes(TPolynome *polynome1, TPolynome *polynome2);
 
 TPolynome *soustraire_polynomes(TPolynome *polynome1, TPolynome *polynome2);
 
+// 6-Prototype de la fonction de destruction d'un polynôme
+
+void detruire_polynome(TPolynome *polynome);
+
+// 0-Prototype de la fonction de menu
+
+int menuGeneral();
 
 /*==============fin polynomes.h==================*/
 
