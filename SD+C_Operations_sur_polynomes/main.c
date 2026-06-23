@@ -1,16 +1,16 @@
 /**
 ********************************************************
 
-  Programme :  OpÃ©rations sur des polynÃ´mes
-               Ã  partir d'une liste chaÃ®nÃ©e.
+  Programme :  Opérations sur des polynômes
+               à partir d'une liste chaînée.
 
-  Nom :      SD+C-2026-Groupe-1-PolynÃ´mes
+  Nom :      SD+C-2026-Groupe-1-Polynômes
   Auteurs :
-            1. ABIDI MawusÃ© Jean-Marie GÃ©dÃ©on (GM)
+            1. ABIDI Mawusé Jean-Marie Gédéon (GM)
             2. AKONDO Samihatou               (GC)
             3. AKOTSU Yao Aurelien Placide    (GM)
             4. AGBOGAN Komlan Marcel          (GC)
-            5. BARA OussonÃ¨ Bryann           (IA&BD)
+            5. BARA Oussonè Bryann           (IA&BD)
             6. ETOH Fortunatus                (GM)
             7. TCHA-ZAWA Abdou Moudjib       (IA&BD)
             8. TINANKPA Wilfried Kodjo       (IA&BD)
@@ -18,10 +18,10 @@
 
 
   IDE : Code::Blocks
-  ChargÃ© de l'UE : Monsieur AKAKPO
+  Chargé de l'UE : Monsieur AKAKPO
   Niveau : L1 Semestre 2
-  Date de crÃ©ation : 14/06/2026
-  Date de rendu : 23/06/2026
+  Date de création : 14/06/2026
+  Date de rendu : 16/06/2026
 
 ********************************************************
 */
@@ -36,12 +36,12 @@ int main()
 {
     setlocale(LC_ALL,"");
 
-    // DÃ©claration des pointeurs sans allocation mÃ©moire
+    // Déclaration des pointeurs sans allocation mémoire
     TPolynome *polynome1 = NULL;
     TPolynome *polynome2 = NULL;
     TPolynome *polynome3 = NULL;
 
-int choix = 0;
+    int choix = 0;
     while(choix != 3)
     {
         int decision = 0;
@@ -61,14 +61,15 @@ int choix = 0;
             printf("\nADDITION DES DEUX POLYNOMES : \n");
             polynome3 = additionner_polynomes(polynome1,polynome2);
             afficher_polynome(polynome3,3);
-            printf("\nAddition des deux polynï¿½mes rï¿½ussie avec succï¿½s! Merci\n");
+            printf("\nAddition des deux polynômes réussie avec succès! Merci\n");
 
             detruire_polynome(polynome1); free(polynome1);
             detruire_polynome(polynome2); free(polynome2);
             detruire_polynome(polynome3); free(polynome3);
 
             break;
-            case 2:
+
+        case 2:
             polynome1 = creer_initialiser_poly();
             polynome2 = creer_initialiser_poly();
 
@@ -80,8 +81,8 @@ int choix = 0;
 
             printf("\nSOUSTRACTION DES DEUX POLYNOMES : ");
             printf("\n\nQuelle soustraction voulez vous effectuez?");
-            printf("\n\n1- Polynï¿½me Nï¿½1 - Polynï¿½me Nï¿½2\n");
-            printf("\n\n2- Polynï¿½me Nï¿½2 - Polynï¿½me Nï¿½1\n");
+            printf("\n\n1- Polynôme N°1 - Polynôme N°2\n");
+            printf("\n\n2- Polynôme N°2 - Polynôme N°1\n");
             while(decision!=1 && decision !=2)
             {
                 printf("\nVeuillez choisir entre l'option 1 et 2 : ");
@@ -92,7 +93,7 @@ int choix = 0;
             if(decision == 2)
                 polynome3 = soustraire_polynomes(polynome2,polynome1);
             afficher_polynome(polynome3,3);
-            printf("\nSoustraction des deux polynï¿½mes rï¿½ussie avec succï¿½s! Merci\n");
+            printf("\nSoustraction des deux polynômes réussie avec succès! Merci\n");
 
             detruire_polynome(polynome1); free(polynome1);
             detruire_polynome(polynome2); free(polynome2);
@@ -108,8 +109,7 @@ int choix = 0;
             break;
         }
     }
-    printf("\n\nMerci d'avoir visitï¿½ notre menu!\n");
+    printf("\n\nMerci d'avoir visité notre menu!\n");
 
     return 0;
 }
-
